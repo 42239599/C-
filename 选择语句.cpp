@@ -1,105 +1,90 @@
-//if语句 
-//有一函数y=-1(x<0),0(x=0),1(x>0)
-//#include <stdio.h>
-//int main()
-//{
-//	int a;
-//	printf("please input a number:\n");
-//	scanf("%d",&a);
-//	if(a>0)
-//	{
-//		printf("y=1");
-//	}
-//	else if(a == 0)
-//	{
-//		printf("y=0");
-//	}
-//	else
-//	{
-//		printf("y=-1");
-//	}
-//
-//	return 0;
-// } 
+////选择语句 
 
-//输入两个实数a,b ，按数值从小到大的顺序输出这两个数
+/*
+某科成绩原为ABCD四个等级，现要将其转成百分制分数段，规则是：
+A等级转成85~100，B等级转成70~84，C等级转成60~69，D等级转成<60. 
+请编一程序，成绩等级由键盘输入，输出分数段 
+*/
 //#include <stdio.h>
 //int main()
 //{
-//	double a,b,t;
-//	scanf("%lf %lf",&a,&b);
-//	if(a>b)
+//	char dengji ;
+//	scanf("%c",&dengji);
+//	switch(dengji)
 //	{
-//		t = a;
-//		a = b;
-//		b = t;
+//		case 'A':
+//			{
+//				printf("该生分数为85~100\n");
+//				break; 
+//			}
+//		case 'B':
+//			{
+//				printf("该生分数为70~84\n");
+//				break;
+//			}	
+//		case 'C':
+//			{
+//				printf("该生分数为60~69\n");
+//				break;
+//				}	
+//		case 'D':
+//			{
+//				printf("该生分数为<60\n");
+//				break;	
+//			}		
+//		default:printf("输入有误\n");break;
 //	}
-//	printf("%f,%f",a,b);
-//	return 0;
-// } 
-
-//输入三个实数a,b,c;按数值从小到大排序
-//#include <stdio.h>
-//int main()
-//{
-//	int a,b,c,t;
-//	scanf("%d %d %d",&a,&b,&c);
 //	
-//	if(a>b)
-//	{
-//		t = a;
-//		a = b;
-//		b = t;
-//	}
-//	if(a>c)
-//	{
-//		t = a;
-//		a = c;
-//		c = t;
-//	}
-//	if(b>c)
-//	{
-//		t =b;
-//		b =c;
-//		c =t;
-//	}
-//	printf("%d	%d	%d",a,b,c);
 //	return 0;
 //}
- 
-//判断某一年是否为闰年（当年份不是100的倍数且是4的倍数时；当年份是100的倍数且是400的倍数时是闰年） 
-//#include <stdio.h>
-//int main()
-//{
-//	int a;
-//	printf("请输入年份：\n");
-//	scanf("%d",&a);
-//	
-//	if((a%100 != 0 && a%4 ==0) || (a%100 == 0 && a%400 == 0) )
-//	printf("是闰年");
-//	else
-//	printf("不是闰年"); 
-//	
-//	return 0;
-// } 
 
-//输入一个字符，判断是否为大写字母，若是将其转换成小写字母；若不是则不转换，然后判断最后得到的字符
+/*
+某科成绩原为百分制，现要将其转成等级，规则是：
+90分以上为A,80~89为B，70~79为C，60~69为D；60分以下为E； 
+编一程序，分数由键盘输入，输出等级 
+*/
 //#include <stdio.h>
 //int main()
 //{
-//	char a;
-//	printf("请输入一个字符：\n");
-//	scanf("%c",&a);
+//	double a;
+//	printf("请输入您的成绩：\n");
+//	scanf("%lf",&a);
 //	
-//	if(a>='A' && a<='Z')
+//	switch((int)(a/10))
 //	{
-//		a+= 32;
-//		printf("%c\n",a); 
+//		case 10:
+//		case 9:
+//			{
+//				printf("该生成绩为A\n");
+//				break;
+//			}
+//		case 8:
+//			{
+//				printf("该生成绩为B\n");
+//				break;
+//			}
+//		case 7:
+//			{
+//				printf("该生成绩为C\n");
+//				break;
+//			}
+//		case 6:
+//			{
+//				printf("该生成绩为D\n");
+//				break;
+//			}
+//		case 5:
+//		case 4:
+//		case 3:
+//		case 2:
+//		case 1:
+//		case 0:printf("该生成绩为E\n");break;
+//		default:printf("输入有误\n");break;	
+//		
 //	}
-//	else
-//	printf("%c\n",a);
+//	
 //	return 0;
-// } 
+//}
 
 
 
