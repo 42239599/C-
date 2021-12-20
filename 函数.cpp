@@ -1,129 +1,54 @@
-//#include <stdio.h>
-//void zb(int key,int a[],int n)
+//#include <stdio.h> 
+//void move (char x,char y)
 //{
-//	int i,mid,low,high,count1=0,count=0;
-//	low=0;
-//	high=n-1;
-//	while(high>=low)
+//	printf("%c--->%c\n",x,y);
+//}
+//
+//void hannuo(int n,char one,char two,char three)
+//{
+//	if(n==1)
+//		move(one,three);
+//	else
 //	{
-//		count++;
-//		mid=(low+high)/2;
-//		if(key<a[mid])
-//		{
-//			high=mid-1;
-//		}
-//		else if(key>a[mid])
-//		{
-//			low=mid+1;
-//		}
-//		if(key==a[mid])
-//		{
-//		printf("找到了，共查找了%d次，a[%d]=%d\n",count,mid,key);
-//		count1++; 
-//		break;	
-//		}
-//		if(count1==1)
-//		{
-//			printf("输入有误\n");
-//		}	
+//		hannuo(n-1,one,three,two);
+//		move(one,three);
+//		hannuo(n-1,two,one,three);
 //	}
 //}
 //
 //int main()
 //{
-//	void zb(int key,int a[],int n);
-//	int a[100],i,n,key;
-//	printf("请输入元素个数：\n");
+//	int n;
+//	printf("请输入 层数：\n");
 //	scanf("%d",&n);
-//	printf("按照从小到大顺序输入：\n");
-//	for(i=0;i<n;i++)
-//	{
-//		scanf("%d",&a[i]);
-//	}
-//	printf("请输入要查找的元素：\n");
-//	scanf("%d",&key);
-//	zb(key,a,n);
-//	printf("\n");
+//	hannuo(n,'A','B','C');
 //	return 0;
-//}
-
-//#include <stdio.h>
-//int  main()
-//{
-//	void print_star();
-//	void print_message();
-//	print_star();
-//	print_message();
-//	print_star();
-//	return 0;
-//}
-//void print_star()
-//{
-//	printf("************************\n");
-//}
-//void print_message()
-//{
-//	printf("how do you do !\n");
 //}
 
 //#include <stdio.h>
 //int max(int x,int y)
 //{
-//	int z;
-//	z=x>y?x:y;
-//	return(z);
+//	return (x>y?x:y);
 //}
 //int main()
 //{
-//	int max(int x,int y);
-//	int a,b,c;
-//	printf("请输入两个要比较大小的数：\n");
-//	scanf("%d %d",&a,&b);
-//	c=max(a,b);
-//	printf("%d\n",c);
-//	return 0;
-//}
-
-//#include <stdio.h>
-//float add(float x,float y)
-//{
-//	float z;
-//	z=x+y;
-//	return z;
-//}
-//
-//int main()
-//{
-//	float add(float x,float y);
-//	float a,b,c;
-//	printf("请输入两个数：\n");
-//	scanf("%f %f",&a,&b);
-//	c=add(a,b);
-//	printf("两者的值为：%f\n",c);
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int max4(int a,int b,int c,int d)
-//{
-//	int max2(int a,int b);
-//	int m;
-//	m=max2(max2(max2(a,b),c),d);
-//	return m;
-//}
-//int max2(int a,int b)
-//{
-//	return(a>b?a:b);
-//}
-//
-//int main()
-//{
-//	int max4(int a,int b,int c,int d);
-//	int a,b,c,d,max;
-//	printf("请输入4个数字：\n");
-//	scanf("%d %d %d %d",&a,&b,&c,&d);
-//	max=max4(a,b,c,d);
-//	printf("四个数中的最大数为：%d\n",max);
+//	int a[10],i,n=0,m;
+//	printf("请输入十个元素：\n");
+//	for(i=0;i<10;i++)
+//	{
+//		scanf("%d",&a[i]);
+//	}
+//	printf("\n");
+//	m=a[0];
+//	for(i=1;i<10;i++)
+//	{
+//		if(max(a[i],m)>m)
+//		{
+//			m=max(a[i],m);
+//			n=i;
+//		}
+//	}
+//	printf("最大值是：%d,在数组的第%d位\n",m,n+1);
 //	return 0;
 //}
 
@@ -131,150 +56,193 @@
 //#include <stdio.h>
 //int main()
 //{
-//	int age(int n);
-//	printf("第五个学生的年龄是：%d\n",age(5));
+//	float average(float a[10]);
+//	int i;
+//	float score[10],aver;
+//	printf("请输入十个成绩：\n");
+//	for(i=0;i<10;i++)
+//	{
+//		scanf("%f",&score[i]);
+//	}
+//	printf("\n");
+//	aver=average(score);
+//	printf("平均分是：%5.2f\n",aver);
 //	return 0;
 //}
-//
-//int age(int n)
+//float average(float a[10])
 //{
-//	int c;
-//	if(n==1)
-//		c=10;
-//	else
-//		c=age(n-1)+2;
-//	return c;
+//	float sum=0,av;
+//	int i;
+//	for(i=0;i<10;i++)
+//	{
+//		sum+=a[i];
+//	}
+//	av=sum/10;
+//	return (av);
 //}
-
 
 //#include <stdio.h>
-//int jc(int n)
+//int main()
+// {
+// 	float average(float a[],int n);
+// 	float score1[5],score2[10];
+// 	int i;
+// 	printf("请输入1班的成绩：\n");
+// 	for(i=0;i<5;i++)
+// 	{
+// 		scanf("%f",&score1[i]);
+//	 }
+// 	printf("请输入2班的成绩：\n");
+// 	for(i=0;i<10;i++)
+// 	{
+// 		scanf("%f",&score2[i]);
+//	 }
+//	printf("1班成绩平均分是：%5.2f\n",average(score1,5));
+//	printf("2班成绩平均分是：%5.2f\n",average(score2,10));	
+// 	return 0;
+// }
+//float average(float a[],int n)
 //{
-//	int a;
-//	if(n==1)
-//		a=1;
-//	else
-//		a=jc(n-1)*n;
-//	return a;		
+//	int i;
+//	float sum=0.0,aver;
+//	for(i=0;i<n;i++)
+//	{
+//		sum=sum+a[i];
+//	}
+//	aver=sum/n;
+//	return aver;
 //}
-//
+
+//#include <stdio.h>
 //int main()
 //{
-//	int jc( int n);
-//	int n,c;
-//	printf("请输入要阶乘的数：\n");
-//	scanf("%d",&n);
-//	c=jc(n);
-//	printf("结果是：%d\n",c); 
-//	
+//	void sort(int a[],int n);
+//	int a[10],i;
+//	printf("请输入十个数字：\n");
+//	for(i=0;i<10;i++)
+//	{
+//		scanf("%d",&a[i]);
+//	}
+//	sort(a,10);
+//	printf("从小到大排序后是:\n");
+//	for(i=0;i<10;i++)
+//	{
+//		printf("%d\t",a[i]);
+//	}
+//	return 0;
+//}
+//void sort(int a[],int n)
+//{
+//	int i,j,t;
+//	for(i=0;i<9;i++)
+//	{
+//		for(j=i+1;j<10;j++)
+//		{
+//			if(a[i]>a[j])
+//			{
+//				t=a[i];
+//				a[i]=a[j];
+//				a[j]=t;
+//			}
+//		}	
+//	}
+//}
+
+
+//#include <stdio.h>
+//int main()
+//{
+//	int max_value(int array[][4]);
+//	int a[3][4]={{12,20,-9,36},{41,10,82,99},{65,-9,85,1}};
+//	printf("最大值为：%d\n",max_value(a));	
+//	return 0;
+//}
+//int max_value(int array[][4])
+//{
+//	int i,j,max;
+//	max=array[0][0];
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<4;j++)
+//		{
+//			if(array[i][j]>max)
+//			max=array[i][j];
+//		}
+//	}
+//	return max;
+//}
+
+
+
+//#include <stdio.h>
+//int max_value(int array[][4])
+//{
+//	int i,j,max;
+//	max=array[0][0];
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<4;j++)
+//		{
+//			if(array[i][j]>max)
+//			max=array[i][j];
+//		}
+//	}
+//	return max;
+//}
+//int main()
+//{
+//	int max_value(int array[][4]);
+//	int a[3][4]={{12,36,20,-9},{85,96,20,-98},{54,55,63,20}};
+//	printf("最大数为：%d\n",max_value(a));
 //	return 0;
 //}
 
 //#include <stdio.h>
-//int jc(int n)
+//float Max=0,Min=0;
+//int main()
 //{
-//	int  f;
-//	if(n<0)
-//		printf("您的输入有误\n");
-//	else if(n==0 || n==1)	
-//		f=1;
-//	else
-//		f=jc(n-1)*n;	
+//	float average(float array[],int n);
+//	float aver,a[10];
+//	int i; 
+//	printf("请输入十个学生成绩：\n");
+//	for(i=0;i<10;i++)
+//	{
+//		scanf("%f",&a[i]);
+//	}
+//	aver=average(a,10);
+//	printf("最大值是：%5.2f 最小值是：%5.2f 平均分是：%5.2f\n",Max,Min,aver);
+//	return 0;
+//}
+//float average(float array[],int n)
+//{
+//	int i;
+//	float sum=0,aver;
+//	Max=Min=array[0];
+//	for(i=0;i<10;i++)
+//	{
+//		if(array[i]>Max)	Max=array[i];
+//		else if(array[i]<Min)	Min=array[i];
+//		sum=sum+array[i];
+//	}
+//	aver=sum/n;
+//	return aver;	
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	int fac(int n);
+//	int i;
+//	for(i=1;i<=5;i++)
+//		printf("%d!=%d\n",i,fac(i));
+//	return 0;
+//}
+//int fac(int n)
+//{
+//	static int f=1;
+//	f=f*n;
 //	return f;
 //}
-//int main()
-//{
-//	int jc(int n);
-//	int n,c;
-//	printf("请输入要阶乘的数字：\n");
-//	scanf("%d",&n);
-//	c=jc(n);
-//	printf("%d! = %d",n,c);
-//	return 0;
-//}
-
-
-//#include <stdio.h>
-//int main()
-//{
-//	int a=1, n,i;
-//	printf("请输入要阶乘的数：\n");
-//	scanf("%d",&n);
-//	if(n==1)
-//		a=1;
-//	else
-//	{
-//		for(i=n;i>0;i--)
-//		{
-//			a=a*i;
-//		}		
-//	}
-//	printf("%d! = %d\n",n,a);
-//	return 0;
-//}
-
-#include <stdio.h>
-#include <string.h> 
-
-void hannuo(int n,char one,char two,char three)
-{
-	void move(char x,char y);
-	if(n==1)
-		move(one,three);
-	else
-	{
-		hannuo(n-1,one,three,two);
-		move(one,three);
-		hannuo(n-1,two,one,three);
-	}	
-}
-void move(char x,char y)
-{
-	printf("%c---->%c\n",x,y);
-}
-int main()
-{
-	int n;
-	printf("请输入你的数字：\n");
-	scanf("%d",&n);
-	hannuo(n,'A','B','C');
-	return 0;
-}
-
-//#include <stdio.h>
-//#include <string.h>
-///*
-// 算法思路：1将 n-1个盘子先放到B座位上
-//          2.将A座上地剩下的一个盘移动到C盘上
-//          3、将n-1个盘从B座移动到C座上
-//*/
-////函数声明
-//void move(char x, char y);
-//void hannuo(int n,char one ,char two,char three)
-//{
-//  if(n==1)move(one, three); //递归截止条件
-//  else
-//{
-//  hannuo(n-1,one ,three,two);//将 n-1个盘子先放到B座位上
-//  move(one,three);//将A座上地剩下的一个盘移动到C盘上
-//  hannuo(n-1,two,one,three);//将n-1个盘从B座移动到C座上
-// 
-//}
-//}
-//void move(char x,char y)
-//{
-// printf("%c--->%c\n",x,y);
-//}
-// 
-//int main()
-//{
-// int n;
-// printf("input your number");
-// scanf("%d",&n);
-// hannuo(n,'A','B','C');
-// return 0;
-//}
-
 
 
 
