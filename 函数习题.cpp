@@ -1,224 +1,175 @@
 //#include <stdio.h>
+//#include <string.h>
 //int main()
 //{
-//	int a,b,c,m,t;
-//	printf("请输入两个数：\n");
-//	scanf("%d %d",&a,&b);
-//	if(a<b)
+//	void fx(char a[]);
+//	char a[100];
+//	printf("请输入字符串：\n");
+//	gets(a);
+//	printf("输入的字符串为：%s\n",a);
+//	fx(a);
+//	printf("反序输出为：%s\n",a);
+//	return 0;
+//}
+//void fx(char a[])
+//{
+//	int i,j;
+//	char fx_a[100];
+//	for(i=0,j=strlen(a)-1;a[i] != '\0';i++,j--)
 //	{
-//		t=a;
-//		a=b;
-//		b=t;
+//		fx_a[i]=a[j];
 //	}
-//	c=a%b;
-//	m=a*b;
-//	while(c != 0)
+//	fx_a[i]='\0';
+//	strcpy(a,fx_a);
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	void fx(char a[]);
+//	char a[100];
+//	printf("请输入字符串：\n");
+//	gets(a);
+//	fx(a);
+//	printf("反序后的字符串是：%s\n",a);
+//	return 0;
+//}
+//void fx(char a[])
+//{
+//	int i,j;
+//	char fx_a[100];
+//	for(i=0,j=strlen(a)-1;a[i] != '\0';i++,j--)
 //	{
-//		a=b;
-//		b=c;
-//		c=a%b;
+//		fx_a[i]=a[j];
 //	}
-//	printf("最小公倍数：%d\n最大公约数：%d\n",m/b,b); 
+//	fx_a[i]='\0';
+//	strcpy(a,fx_a);
+//}
+
+
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	void cat(char str1[],char str2[]);
+//	char str1[100],str2[100];
+//	printf("请输入第一个字符串：\n");
+//	gets(str1);
+//	printf("请输入第二个字符串：\n");
+//	gets(str2);
+//	cat(str1,str2);
+//	return 0;
+//}
+//void cat(char str1[],char str2[])
+//{
+//	printf("拼接后为：%s\n",strcat(str1,str2));
+//}
+
+
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	char a[4],i;
+//	printf("请输入一个四位数：\n");
+//	gets(a);
+//	for(i=0;i<strlen(a);i++)
+//		printf("%c ",a[i]);
+//	printf("\n");
 //	return 0;
 //}
 
 //#include <stdio.h>
 //int main()
 //{
-//	int zd(int x,int y);
-//	int zx(int x,int y);
-//	int a,b;
-//	printf("请输入两个数：\n");
-//	scanf("%d %d",&a,&b);
-//	printf("最小公倍数为：%d\n最大公约数为：%d\n",zx(a,b),zd(a,b));
+//	void tj(char ch[]);
+//	char ch[100];
+//	printf("请输入要统计的内容：\n");
+//	gets(ch);
+//	printf("统计如下：\n");
+//	tj(ch);
 //	return 0;
 //}
-//int zd(int x,int y)
+//void tj(char ch[])
 //{
-//	int c,t;
-//	if(x<y)
+//	int i,num_char=0,num_math=0,num_space=0,num_other=0;
+//	for(i=0;ch[i] != '\0';i++)
 //	{
-//		t=x;
-//		x=y;
-//		y=t;
+//		if(ch[i] >='A' && ch[i] <='Z' ||ch[i]>='a' && ch[i]<='z')
+//			num_char++;
+//		else if(ch[i] >='0' && ch[i] <='9')
+//			num_math++;
+//		else if(ch[i] == ' ')
+//			num_space++;
+//		else
+//			num_other++;	
 //	}
-//	c=x%y;
-//	while(c != 0)
-//	{
-//		x=y;
-//		y=c;
-//		c=x%y;
-//	}
-//	return y;
-//}//最大公约数
-//int zx(int x,int y)
-//{
-//	int m;
-//	m=(x*y)/zd(x,y);
-//	return m;
-// } //最小公倍数 
-
-//#include <stdio.h>
-//#include <math.h>
-//void f1(int a,int b,int c);
-//void f2(int a,int b,int c);
-//void f3(int a,int b,int c);
-//int main()
-//{
-//	int a,b,c;
-//	double t;
-//	printf("请输入3个系数：\n");
-//	scanf("%d %d %d",&a,&b,&c);
-//	printf("原方程为%dx^2+%dx+%d=0\n",a,b,c);
-//	t=b*b-4*a*c;
-//	if(t>0)
-//		f1(a,b,c);
-//	if(t==0)
-//		f2(a,b,c);
-//	if(t<0)
-//		f3(a,b,c);		
-//	return 0;
-//}
-//void f1(int a,int b,int c)
-//{
-//	double t,x1,x2;
-//	t=b*b-4*a*c;
-//	x1=(-b+sqrt(t))/(2*a);
-//	x2=(-b-sqrt(t))/(2*a);
-//	printf("方程的两个根为：x1=%5.2f\tx2=%5.2f\n",x1,x2);
-//}
-//void f2(int a,int b,int c)
-//{
-//	double t,x1,x2;
-//	t=b*b-4*a*c;
-//	x1=(-b-sqrt(t))/(2*a);
-//	x2=x1;
-//	printf("方程的根为x1=x2=%5.2f\n",x1);
-//}
-//void f3(int a,int b,int c)
-//{
-//	printf("无实根\n");
-//}
-
-
-//#include <stdio.h>
-//int main()
-//{
-//	int a,i,b;
-//	printf("请输入数字：\n");
-//	scanf("%d",&a);
-//	for(i=2;i<a;i++)
-//	{
-//		b=a%i;
-//		if(b==0)
-//		{
-//			printf("%d不是素数\n",a);
-//			break;
-//		}	
-//	}
-//	if(b!=0)
-//	printf("%d是素数\n",a);	
-//	return 0;
+//	printf("字母个数为：%d\n数字个数为：%d\n空格个数为：%d\n其他字符个数为：%d\n",num_char,num_math,num_space,num_other);
 //}
 
 //#include <stdio.h>
 //int main()
 //{
-//	int a,i,b;
-//	printf("请输入数字：\n");
-//	scanf("%d",&a);
-//	for(i=2;i<=a/2;i++)
+//	void px(int a[]);
+//	int i,a[10];
+//	printf("请输入十个数字：\n");
+//	for(i=0;i<10;i++)
 //	{
-//		b=a%i;
-//		if(b == 0)
-//			break;
+//		scanf("%d",&a[i]);
 //	}
-//	if(i<=a/2)
-//		printf("%d不是素数\n",a);
-//	else
-//		printf("%d是素数\n",a);
+//	printf("排序后的结果是：\n");
+//	px(a);
 //	return 0;
 //}
-
-//#include <stdio.h>
-//#include <math.h>
-//int main()
-//{
-//	int a,i,k,b;
-//	printf("请输入数字：\n");
-//	scanf("%d",&a);
-//	k=sqrt(a);
-//	for(i=2;i<=k;i++)
-//	{
-//		b=a%i;
-//		if(b == 0)
-//			break;
-//	}
-//	if(i<=k)
-//		printf("%d不是素数\n",a);
-//	else
-//		printf("%d是素数\n",a);
-//	return 0;
-//}
-
-// #include <stdio.h>
-//int main()
-//{
-//	void pd(int n);
-//	int n;
-//	printf("请输入数字：\n");
-//	scanf("%d",&n);
-//	pd(n);
-//	return 0;
-//}
-//void pd(int n)
-//{
-//	int a,i;
-//	
-//	for(i=2;i<=n/2;i++)
-//	{
-//		a=n%i;
-//		if(a==0)
-//			break;
-//	}
-//	if(i<=n/2)
-//		printf("%d不是素数\n",n);
-//	else
-//		printf("%d是素数\n",n);
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	void hh(int a[3][3]);
-//	int a[3][3]={{1,2,3},{4,5,6},{7,8,9}};
-//	hh(a);
-//	return 0;
-//}
-//void hh(int a[3][3])
+//void px(int a[])
 //{
 //	int i,j,t;
-//	for(i=0;i<3;i++)
+//	for(j=0;j<9;j++)
 //	{
-//		for(j=0;j<=i;j++)
+//		for(i=j;i<9;i++)
 //		{
-//			if(i != j)
+//			if(a[i]>a[i+1])
 //			{
-//				t=a[i][j];
-//				a[i][j]=a[j][i];
-//				a[j][i]=t;				
+//				t=a[i];
+//				a[i]=a[i+1];
+//				a[i+1]=t;
 //			}
 //		}
 //	}
-//	for(i=0;i<3;i++)
+//	
+//	for(i=0;i<10;i++)
 //	{
-//		for(j=0;j<3;j++)
-//		{
-//			printf("%d\t",a[i][j]);
-//		}
-//		printf("\n");
+//		printf("%d\t",a[i]);
 //	}
 //}
+
+//#include <stdio.h>
+//#include <math.h>
+//int main()
+//{
+//	float solute(float,float,float,float);
+//	float a,b,c,d,x;
+//	printf("请输入a,b,c,d的值：\n");
+//	scanf("%f %f %f %f",&a,&b,&c,&d);
+//	x=solute(a,b,c,d);
+//	printf("结果是：%f\n",x);
+//	return 0;
+//}
+//float solute(float a,float b,float c,float d)
+//{
+//	float x1=0,x=1;
+//	while(fabs(x1-x)>1e-6)
+//	{
+//		x1=x;
+//		x=x1-(a*pow(x,3)+b*pow(x,2)+c*x+d)/(3*a*pow(x,2)+2*b*x+c);
+//	}
+//	return x;
+//}
+
+
+
+
 
 
 
