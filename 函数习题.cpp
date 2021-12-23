@@ -1,171 +1,224 @@
-//#include <stdio.h>
-//#include <string.h>
+//#include <stdio.h> 
 //int main()
 //{
-//	void fx(char a[]);
-//	char a[100];
-//	printf("请输入字符串：\n");
-//	gets(a);
-//	printf("输入的字符串为：%s\n",a);
-//	fx(a);
-//	printf("反序输出为：%s\n",a);
+//	float p(int n,float x);
+//	int n;
+//	float x;
+//	printf("请输入n：\n");
+//	scanf("%d",&n);
+//	printf("请输入x:\n");
+//	scanf("%f",&x);
+//	printf("\n%d阶相对应的值为：%f\n",n,p(n,x));	
 //	return 0;
 //}
-//void fx(char a[])
+//float p(int n,float x)
 //{
-//	int i,j;
-//	char fx_a[100];
-//	for(i=0,j=strlen(a)-1;a[i] != '\0';i++,j--)
-//	{
-//		fx_a[i]=a[j];
-//	}
-//	fx_a[i]='\0';
-//	strcpy(a,fx_a);
+//	if(n==0)
+//		return 1;
+//	else if(n==1)
+//		return x;
+//	else
+//		return ((2*n-1)*x-p(n-1,x)-(n-1)*p(n-2,x))/n;
 //}
 
+//C程序设计第五版（谭浩强）
+//章节：第七章 用函数实现模块化程序设计 
+//练习7.13 用递归方法求n阶勒让德多项式的值。 
 //#include <stdio.h>
-//#include <string.h>
+// 
 //int main()
 //{
-//	void fx(char a[]);
-//	char a[100];
-//	printf("请输入字符串：\n");
-//	gets(a);
-//	fx(a);
-//	printf("反序后的字符串是：%s\n",a);
+//	double legendre_polynomial_expansion(int n, double x);
+//	int n;
+//	double x;
+//	printf("请输入n：");
+//	scanf("%d", &n);
+//	printf("请输入x：");
+//	scanf("%lf", &x);
+//	printf("\n%d阶勒让德多项式的值为：%lf", n, legendre_polynomial_expansion(n, x));
 //	return 0;
 //}
-//void fx(char a[])
-//{
-//	int i,j;
-//	char fx_a[100];
-//	for(i=0,j=strlen(a)-1;a[i] != '\0';i++,j--)
-//	{
-//		fx_a[i]=a[j];
+// 
+//double legendre_polynomial_expansion(int n, double x)
+//{ 
+//	if(n==0){
+//		return 1;
 //	}
-//	fx_a[i]='\0';
-//	strcpy(a,fx_a);
-//}
-
-
-//#include <stdio.h>
-//#include <string.h>
-//int main()
-//{
-//	void cat(char str1[],char str2[]);
-//	char str1[100],str2[100];
-//	printf("请输入第一个字符串：\n");
-//	gets(str1);
-//	printf("请输入第二个字符串：\n");
-//	gets(str2);
-//	cat(str1,str2);
-//	return 0;
-//}
-//void cat(char str1[],char str2[])
-//{
-//	printf("拼接后为：%s\n",strcat(str1,str2));
-//}
-
-
-//#include <stdio.h>
-//#include <string.h>
-//int main()
-//{
-//	char a[4],i;
-//	printf("请输入一个四位数：\n");
-//	gets(a);
-//	for(i=0;i<strlen(a);i++)
-//		printf("%c ",a[i]);
-//	printf("\n");
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	void tj(char ch[]);
-//	char ch[100];
-//	printf("请输入要统计的内容：\n");
-//	gets(ch);
-//	printf("统计如下：\n");
-//	tj(ch);
-//	return 0;
-//}
-//void tj(char ch[])
-//{
-//	int i,num_char=0,num_math=0,num_space=0,num_other=0;
-//	for(i=0;ch[i] != '\0';i++)
-//	{
-//		if(ch[i] >='A' && ch[i] <='Z' ||ch[i]>='a' && ch[i]<='z')
-//			num_char++;
-//		else if(ch[i] >='0' && ch[i] <='9')
-//			num_math++;
-//		else if(ch[i] == ' ')
-//			num_space++;
-//		else
-//			num_other++;	
+//	else if(n==1){
+//		return x;
 //	}
-//	printf("字母个数为：%d\n数字个数为：%d\n空格个数为：%d\n其他字符个数为：%d\n",num_char,num_math,num_space,num_other);
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	void px(int a[]);
-//	int i,a[10];
-//	printf("请输入十个数字：\n");
-//	for(i=0;i<10;i++)
-//	{
-//		scanf("%d",&a[i]);
-//	}
-//	printf("排序后的结果是：\n");
-//	px(a);
-//	return 0;
-//}
-//void px(int a[])
-//{
-//	int i,j,t;
-//	for(j=0;j<9;j++)
-//	{
-//		for(i=j;i<9;i++)
-//		{
-//			if(a[i]>a[i+1])
-//			{
-//				t=a[i];
-//				a[i]=a[i+1];
-//				a[i+1]=t;
-//			}
-//		}
-//	}
-//	
-//	for(i=0;i<10;i++)
-//	{
-//		printf("%d\t",a[i]);
+//	else{
+//		return ((2*n-1)*x-legendre_polynomial_expansion(n-1, x)-(n-1)*legendre_polynomial_expansion(n-2, x))/n;
 //	}
 //}
+
 
 //#include <stdio.h>
 //#include <math.h>
 //int main()
 //{
-//	float solute(float,float,float,float);
-//	float a,b,c,d,x;
-//	printf("请输入a,b,c,d的值：\n");
-//	scanf("%f %f %f %f",&a,&b,&c,&d);
-//	x=solute(a,b,c,d);
-//	printf("结果是：%f\n",x);
+//	void aver_stu(float a[3][4]);
+//	void aver_class(float a[3][4]);
+//	void Max(float a[3][4]);
+//	void fc(float a[3][4]);
+//	float a[3][4];
+//	int i,j;
+//	for(i=0;i<3;i++)
+//	{
+//		printf("请输入第%d个学生的成绩。\n",i+1);
+//		for(j=0;j<4;j++)
+//		{
+//			scanf("%f",&a[i][j]);
+//		}
+//	}
+//	aver_stu(a);
+//	aver_class(a); 
+//	Max(a); 
+//	fc(a);
 //	return 0;
 //}
-//float solute(float a,float b,float c,float d)
+//
+////求每位学生平均分 ，每计算完一次，数据要清零 
+//void aver_stu(float a[3][4])
 //{
-//	float x1=0,x=1;
-//	while(fabs(x1-x)>1e-6)
+//	int i,j;
+//
+//	for(i=0;i<3;i++)
 //	{
-//		x1=x;
-//		x=x1-(a*pow(x,3)+b*pow(x,2)+c*x+d)/(3*a*pow(x,2)+2*b*x+c);
+//		float sum=0,pj;	
+//		for(j=0;j<4;j++)
+//		{
+//			sum=sum+a[i][j];
+//		}
+//		pj=sum/4;
+//		printf("第%d位学生平均分为%5.2f\n",i+1,pj);
 //	}
-//	return x;
 //}
+////求每门课平均分  ，每计算完一次，数据要清零 
+//void aver_class(float a[3][4])
+//{
+//	int i,j;
+//	for(j=0;j<4;j++)
+//	{
+//		float sum=0,pj=0;
+//		for(i=0;i<3;i++)
+//		{
+//			sum=sum+a[i][j];
+//		}
+//		pj=sum/3;
+//		printf("第%d门课的平均分为：%5.2f\n",j+1,pj);
+//	}	
+//}
+////找最大元素以及所在的行和列 
+//void Max(float a[3][4])
+//{
+//	int i,j,h,l;
+//	float max=a[0][0];
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<4;j++)
+//		{
+//			if(a[i][j]>max)
+//			{
+//				max=a[i][j];
+//				h=i+1;
+//				l=j+1;
+//			}
+//		}
+//	}
+//	printf("是第%d位的第%d门的成绩最高：%f\n",h,l,max);
+//}
+//void fc(float a[3][4])
+//{
+//	int i,j;
+//	float sum=0,pj[3],x1,x2,fc_1;
+//	for(i=0;i<3;i++)
+//	{
+//		sum=0,pj[i]=0;
+//		for(j=0;j<4;j++)
+//		{
+//			sum=sum+a[i][j];
+//		}
+//		pj[i]=sum/4;
+//	}
+//	for(i=0,x1=x2=0;i<3;i++)
+//	{
+//		x1+=pow(pj[i],2);
+//		x2+=pj[i];
+//	}
+//	
+//	fc_1=x1/3-pow(x2/3,2);
+//	printf("平均分方差为：%f\n",fc_1);
+//}
+
+
+#include <stdio.h>
+int main()
+{
+	void input(char na[10][20],int nu[10]);
+	void sorts(char na[][20],int nu[10]);
+	char name[10][20];
+	int num[10];
+	input(name,num);
+	sorts(name,num); 
+	
+	return 0;
+}
+//输入 
+void input(char na[10][20],int nu[10])
+{
+	int i;
+	
+	for(i=0;i<10;i++)
+	{
+		printf("请输入第%d名职工姓名：\n",i+1);
+		scanf("%s",&na[i]);
+		printf("请输入第%d名的职工号：\n",i+1);
+		scanf("%d",&nu[i]);
+	}
+}
+//排序
+void sorts(char na[][20],int nu[10])
+{
+	int i,j,temp;
+	for(j=0;j<9;j++)
+	{
+		for(i=0;i<9-j;j++)
+		{
+			
+		}
+	}
+	
+ } 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
