@@ -1,195 +1,7 @@
 //#include <stdio.h> 
 //int main()
 //{
-//	void search_1(float (*p)[4],int n);
-//	void average(float *p,int n);
-//	void search(float (*p)[4],int n);
-//	int a;
-//	float score[3][4]={{74,75,78,95},{85,87,58,54},{58,99,97,88}};
-//	printf("总平均分是：\n");
-//	average(*score,12);	
-//	printf("请输入要查找的学生序号：\n");
-//	scanf("%d",&a);
-//	search(score,a-1);
-//	search_1(score,3);
-//	return 0;
-//}
-//void average(float *p,int n)
-//{
-//	float aver,sum=0;
-//	float *p_end;
-//	p_end=p+n-1;
-//	for(;p<p_end;p++)
-//	{
-//		sum+=*p;
-//	}
-//	aver=sum/n;
-//	printf("%5.2f",aver);
-//}
-//void search(float (*p)[4],int n)
-//{
-//	int i;
-//	printf("第%d名学生的成绩是：\n",n+1);
-//	for(i=0;i<4;i++)
-//	{
-//		printf("%5.2f\t",*(*(p+n)+i));
-//	}
-//	printf("\n");
-//}
-//void search_1(float (*p)[4],int n)
-//{
-//	int i,j,flat;
-//
-//	for(i=0;i<n;i++)
-//	{
-//		flat = 0;
-//		for(j=0;j<4;j++)
-//		{
-//			if(*(*(p+i)+j)<60)
-//			flat=1;
-//		}
-//		if(flat == 1)
-//		{
-//			printf("第%d名学生有成绩不及格，成绩分别如下：\n",i+1);
-//			for(j=0;j<4;j++)
-//			{
-//				printf("%5.2f\t",*(*(p+i)+j));
-//			}
-//		}
-//		printf("\n");		
-//	}
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	void average(float *p,int n); 
-//	void search(float (*p)[4],int n);
-//	void search_1(float (*p)[4],int n);
-//	int a;
-//	float score[3][4]={{99,98,99,40},{75,85,89,68},{59,85,98,76}};
-//	average(*score,12);	//求平均分 
-//	printf("请输入要查找的成绩的排号：\n");
-//	scanf("%d",&a);
-//	search(score,a-1);	//查找对应同学的成绩 
-//	search_1(score,3);	//查找成绩不及格的全部成绩 
-//	
-//}
-//void average(float *p,int n)
-//{
-//	float sum=0,aver, *p_end;
-//	p_end=p+n-1;
-//	for(;p<p_end;p++)
-//	{
-//		sum+=*p;
-//	}
-//	aver=sum/n;
-//	printf("总平均分为：%5.2f\n",aver);
-//}
-//
-//void search(float (*p)[4],int n)
-//{
-//	int i;
-//	printf("第%d名同学的成绩分别如下：\n",n+1);
-//	for(i=0;i<4;i++)
-//	{
-//		printf("%5.2f\t",*(*(p+n)+i));
-//	}
-//	printf("\n");
-//}
-//
-//void search_1(float (*p)[4],int n)
-//{
-//	int i,j,flag;
-//	for(i=0;i<n;i++)
-//	{
-//		flag=0;
-//		for(j=0;j<4;j++)
-//		{
-//			if(*(*(p+i)+j)<60)
-//			flag=1;
-//		}
-//		if(flag==1)
-//		{
-//			printf("序号为%d的同学有不及格的科目，成绩分别如下：\n",i+1);
-//			for(j=0;j<4;j++)
-//			{
-//				printf("%5.2f\t",*(*(p+i)+j));
-//			}
-//		}
-//		printf("\n");
-//	}
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	char string[]="i love China";
-//	printf("%s\n",string);
-//	printf("%c\n",string[7]);
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	char a[]="i love china!",b[20];//定义字符数组 
-//	int i;
-//	for(i=0;*(a+i) != '\0';i++)
-//	{
-//		*(b+i)=*(a+i);				//将a[i]的值赋给b[i] 
-//	}
-//	*(b+i)='\0';					//在b数组的有效字符之后假'\0' 
-//	printf("string a is:%s\n",a);	//输出a数组的全部有效字符 
-//	printf("string b is:\n");
-//	for(i=0;*(b+i) != '\0';i++)
-//	{
-//		printf("%c",b[i]);			//逐个输出b数组中全部有效字符 
-//	}
-//	printf("\n");
-//	
-//	return 0;
-//}
-
-//#include <stdio.h> 
-//int main()
-//{
-//	char a[]="i am a student.",b[20];
-//	int i;
-//	for(i=0;*(a+i) != '\0';i++)
-//	{
-//		*(b+i)=*(a+i);
-//	}
-//	*(b+i)='\0';
-//	printf("string a is:%s\n",a);
-//	printf("string b is:\n");
-//	for(i=0;*(b+i) != '\0';i++)
-//	{
-//		printf("%c",b[i]);
-//	}
-//	printf("\n");
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	char a[]="i am a student.",b[20],*pa,*pb;
-//	pa=a;pb=b;						//pa,pb分别指向a数组和b数组中的第一个元素 
-//	for(;*pa != '\0';pa++,pb++)		//pa,pab每次都自加1 
-//	{
-//		*pb=*pa;					//将pa所指向的元素赋值给pb所指向的元素 
-//	}
-//	*pb='\0';						//在复制所有有效字符之后加'\0' 
-//	printf("string a is:%s\n",a);	//输出a的元素 
-//	printf("string b is:%s\n",b);	//输出b的元素 
-//	return 0;
-//}
-
-//#include <stdio.h> 
-//int main()
-//{
-//	char a[]="i love china!",b[20],*p1,*p2;
+//	char a[]="i love China!",b[20],*p1,*p2;
 //	p1=a;p2=b;
 //	for(;*p1 != '\0';p1++,p2++)
 //	{
@@ -200,19 +12,323 @@
 //	printf("string b is:%s\n",b);
 //	return 0;
 //}
+//
+//#include <stdio.h> 
+//int main()
+//{
+//	void copy_string(char from[],char to[]);
+//	char a[]="i am a student.",b[]="i love china!!";
+//	printf("string a is:%s\n",a);
+//	printf("string b is:%s\n",b);
+//	printf("copy a to b is:\n");
+//	copy_string(a,b);
+//	printf("a is:%s\nb is:%s\n",a,b);
+//	return 0;
+//}
+//void copy_string(char from[],char to[])
+//{
+//	int i;
+//	while(from [i] != '\0')
+//	{
+//		to[i]=from[i];
+//		i++;
+//	}
+//	to[i]='\0';
+//}
 
+//字符数组名做函数参数 
+//#include <stdio.h>
+//int main()
+//{
+//	void copy_string(char from[],char to[]);
+//	char a[]="i am a student.",b[]="i love china!";
+//	printf("string a is:%s\nstring b is:%s\n",a,b);
+//	printf("copy string a to b is:\n");
+//	copy_string(a,b);
+//	printf("string a=%s\nstring b=%s\n",a,b);
+//	return 0;
+//}
+//void copy_string(char from[],char to[])
+//{
+//	int i;
+//	while(from[i] != '\0')
+//	{
+//		to[i]=from[i];
+//		i++;
+//	}
+//	to[i]='\0';
+//}
+// 
+//字符型指针做实参
+//#include <stdio.h> 
+//int main()
+//{
+//	void copy_string(char from[],char to[]);
+//	char a[]="i love china!",b[]="i am a student.";
+//	char *from,*to;				//from指向a数组首元素，to指向b书数组首元素 
+//	from=a;to=b;
+//	printf("string a is:%s\nstring b is:%s\n",a,b);
+//	printf("copy a to b is:\n");
+//	copy_string(from,to);		//实参为字符指针变量 
+//	printf("a is:%s\nb is:%s\n",a,b);
+//	return 0;
+//}
+//void copy_string(char from[],char to[])//形参为字符数组 
+//{
+//	int i;
+//	while(from [i] != '\0')
+//	{
+//		to[i]=from[i];
+//		i++;
+//	}
+//	to[i]='\0';
+//}
+//
+//字符指针变量做形参和实参 
+//#include <stdio.h>
+//int main()
+//{
+//	void copy_string(char *from,char *to);
+//	char *a="i am a student.";		//a是char*型指针变量 
+//	char b[]="i am a teacher.";		//b是字符数组 
+//	char *p=b;						//使指针变量p指向b数组首元素 
+//	printf("string a is:%s\nstring b is:%s\n",a,b);
+//	printf("copy a to b is:\n");
+//	copy_string(a,p);				//调用函数，实参为指针变量 
+//	printf("string a=%s\nstring b=%s\n",a,b);
+//	return 0;
+//}
+//void copy_string(char *from,char *to)//定义函数，形参为字符指针变量 
+//{
+//	for(;*from != '\0';from++,to++)
+//	{
+//		*to=*from;
+//	}
+//	*to='\0';
+//}
 
+//#include <stdio.h> 
+//int main()
+//{
+//	void copy_string(char from[],char to[]);
+//	char a[]="i am a student.", b[]="i love china!!";
+//	char *from,*to;
+//	from=a;to=b;
+//	printf("string a is:%s\nstring b is:%s\n",a,b);
+//	printf("copy a to b is:\n");
+//	copy_string(from,to);
+//	printf("a is:%s\nb is:%s\n",a,b);
+//	return 0;
+//}
+//void copy_string(char from[],char to[])
+//{
+//	int i;
+//	while(from [i] != '\0')
+//	{
+//		to[i]=from[i];
+//		i++;
+//	}
+//	to[i]='\0';
+//}
 
+//#include <stdio.h>
+//int main()
+//{
+//	void copy_string(char *from,char *to);
+//	char *a="i am a student.";
+//	char b[]="i am a teacher.";
+//	char *p=b;
+//	printf("string a=%s\nstring b=%s\n",a,b);
+//	printf("copy a to b:\n");
+//	copy_string(a,p);
+//	printf("string a=%s\nstring b=%s\n",a,b);
+//	return 0;
+//}
+////void copy_string(char *from,char *to)
+////{
+////	for(;(*from) != '\0';from++,to++)
+////	{
+////		*to=*from;
+////	}
+////	*to='\0';
+//// } 
+//void copy_string(char *from,char *to)
+//{
+//	while((*to = *from) != '\0')
+//	from++,to++;
+//}
 
+//#include <stdio.h>
+//int main()
+//{
+//	char *p,str[20];
+//	p=str;
+//	scanf("%s",str);
+//	printf("%s\n",p);
+//	return 0;
+//}
 
+//#include <stdio.h>
+//int main()
+//{
+//	char *a="i love china!";
+//	a=a+7;
+//	printf("%s",a);
+//	return 0;
+//}
 
+//通过函数名调用函数 
+//#include <stdio.h>
+//int main()
+//{
+//	int max(int,int);
+//	int a,b,c;
+//	printf("请输入两个数：\n");
+//	scanf("%d %d",&a,&b);
+//	c=max(a,b); 			//通过函数名调用max函数 
+//	printf("最大数为：%d\n",c);
+//	return 0;
+//}
+//int max(int x,int y)		//定义max函数 
+//{
+//	int  z;
+//	if(x>y)	z=x;
+//	else	z=y;
+//	return z;
+//}
+//通过指针变量访问他所指向的函数
+//#include <stdio.h> 
+//int main()
+//{
+//	int max(int,int);
+//	int (*p)(int,int);
+//	p=max;
+//	int a,b,c;
+//	printf("请输入两个数：\n");
+//	scanf("%d %d",&a,&b);
+//	c=(*p)(a,b);
+//	printf("最大数为：%d\n",c);
+//	return 0;
+//}
+//int max(int x,int y)
+//{
+//	int z;
+//	if(x>y)	z=x;
+//	else	z=y;
+//	return z;
+//}
 
+//#include <stdio.h>
+//int main()
+//{
+//	int max(int,int);			//函数声明 
+//	int min(int,int);			//函数声明  
+//	int (*p)(int x,int y);		//定义指向函数的指针变量 
+//	int a,b,c,n;
+//	printf("请输入两个数字：\n");
+//	scanf("%d %d",&a,&b);
+//	printf("请选择1 或者 2 ：\n");
+//	scanf("%d",&n);				//输入1或2 
+//	if(n==1)	p=max;			//若输入1，使p指向max函数 
+//	else if(n==2)	p=min;		//如输入2，使p指向min函数 
+//	c=(*p)(a,b);				//调用p指向的函数 
+//	printf("a=%d\nb=%d\n",a,b);
+//	if(n==1)
+//		printf("max=%d\n",c);
+//	if(n==2)
+//		printf("min=%d\n",c);
+//	return 0;
+//}
+//int max(int x,int y)
+//{
+//	int z;
+//	if(x>y)	z=x;
+//	else	z=y;
+//	return z;
+//}
+//int min(int x,int y)
+//{
+//	int z;
+//	if(x<y)	z=x;
+//	else	z=y;
+//	return z;
+//}
 
+//#include <stdio.h> 
+//int main()
+//{
+//	int max(int,int);
+//	int min(int,int);
+//	int (*p)(int x,int y);
+//	int a,b,n,c;
+//	printf("请输入两个数字：\n");
+//	scanf("%d %d",&a,&b);
+//	printf("请输入1或者2：\n");
+//	scanf("%d",&n);
+//	if(n==1)	p=max;
+//	else if(n==2)	p=min; 
+//	c=p(a,b);
+//	printf("%d\n",c);
+//	return 0;
+//}
+//int max(int x,int y)
+//{
+//	int z;
+//	if(x>y)	z=x;
+//	else	z=y;
+//	return z;
+//}
+//int min(int x,int y)
+//{
+//	int z;
+//	if(x<y)	z=x;
+//	else	z=y;;
+//	return z;
+//}
 
-
-
-
-
+//#include <stdio.h>
+//int main()
+//{
+//	int fun(int x,int y,int (*p) (int,int));//fun函数声明 
+//	int min(int,int);						//min函数声明 
+//	int max(int,int);						//max函数声明 
+//	int add(int,int);						//add函数声明 
+//	int a,b,n;
+//	printf("请输入两个数字：\n");
+//	scanf("%d %d",&a,&b);
+//	printf("请输入1,2或者3\n");
+//	scanf("%d",&n);
+//	if(n==1)	fun(a,b,min);				//输入1时调用min函数 
+//	else if(n==2)	fun(a,b,max);			//输入2时调用max函数 
+//	else if(n==3)	fun(a,b,add);			//输入3时调用add函数 
+//	return 0;
+//}
+//int fun(int x,int y,int (*p)(int,int))		//定义fun函数 
+//{
+//	int result;
+//	result=(*p)(x,y);
+//	printf("%d\n",result);					//输出结果 
+//}
+//int min(int x,int y)
+//{
+//	int z;
+//	if(x<y)	z=x;
+//	else	z=y;
+//	return z;
+//}
+//int max(int x,int y)
+//{
+//	int z;
+//	if(x>y)	z=x;
+//	else	z=y;
+//	return z;
+//}
+//int add(int x,int y)
+//{
+//	int z;
+//	z=x+y;
+//	return z;
+//}
 
 
 
