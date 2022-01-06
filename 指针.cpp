@@ -1,183 +1,24 @@
 //#include <stdio.h> 
 //int main()
 //{
-//	void sorts(int *q,int x,int y);
-//	int a[100],i,n,m,*p=a;
-//	printf("请输入要输入的个数：\n");
-//	scanf("%d",&n);
+//	int a[100],i,n,m=0,k=0,*p=a;
 //	printf("请输入数字：\n");
-//	for(i=0;i<n;i++)
-//	{
-//		scanf("%d",&a[i]);
-//	}
-//	printf("请输入要后移的位数：\n");
-//	scanf("%d",&m);
-//	printf("整理后的排序是：\n");
-//	sorts(p,n,m);	
-//	return 0;
-//}
-//void sorts(int *q,int x,int y)
-//{
-//	int i,z=x;
-//	for(i=0;i<x-y;i++)
-//	{
-//		*(q+z)=*(q+i);
-//		z++;
-//	}
-//	
-//	for(i=x-y;i<z;i++)
-//	{
-//		printf("%d ",*(q+i));
-//	}	
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	void deal(int x);
-//	int n;
-//	printf("请输入一共有几个人：\n");
 //	scanf("%d",&n);
-//	deal(n);
-//	return 0;
-//}
-//void deal(int x)
-//{
-//	int i;
-//	for(i=1;i<=x;i++)
-//	{
-//		if(i%3==0)
-//		{
-//			i--;
-//		}
-//		continue;
-//	}
-//	printf("%d\n",i);
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	int a[100],i,*p=a,n;
-//	printf("请输入人数：\n");
-//	scanf("%d",&n);
-//	printf("原始报数：\n");
 //	for(i=0;i<n;i++)
 //	{
 //		a[i]=i+1;
-//		printf("%-4d",a[i]);
 //	}
-//	
-//	
-//	return 0;
-//}
-
-//#include <stdio.h>
-//
-//int main()
-//{
-//	int n,i,k = 0,m = 0;//k为1，2，3的计数变量，m为退出人数 
-//	int a[100];
-//	int* p;
-//	
-//	puts("Please input the number of players:");//输入人数 
-//	scanf("%d",&n);
-//		
-//	for (i = 0;i <= n - 1;i++)//对每个人进行编号，方便后续得出结果 
-//	{
-//		a[i] = i + 1;
-//	}
-//
-////以下为逻辑判断部分 
-//	p = a;
-//	i = 0;
-//	while (m < n - 1)
-//	{
-//		if (*(p + i) != 0)//遍历剩下的元素（当然，第一遍是所有元素） 
-//		{
-//			k++;
-//		}
-//		if (k == 3)
-//		{
-//			*(p + i) = 0;//退出标志
-//			m++;
-//			k = 0;
-//		}
-//		i++;
-//		if(i ==n)
-//		{
-//			i = 0;
-//		}
-//	}
-//	while (*p == 0)//判断出第几个，即最后未变成0的元素 
-//	{
-//		p++;
-//	}
-//	printf("The index of the person is %d",*p);
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	int a[100],i,*p=a,k=0,n,m=0;//k是1,2,3的循环报数；n是总人数；m是退出的人数 
-//	printf("请输入总人数：\n");
-//	scanf("%d",&n);
-//	for(i=0;i<n;i++)//对各个数进行编号 
-//	{
-//		a[i]=i+1;
-//	}
-//	
 //	i=0;
 //	while(m<n-1)
 //	{
-//		if(*(p+i) != 0)//遍历剩下的元素 
+//		if(*(p+i) != 0)
 //		{
 //			k++;
 //		}
 //		if(k==3)
 //		{
-//			*(p+i)=0;//推出的标志 
-//			m++;
-//			k=0;
-//		}
-//		i++;
-//		if(i==n)
-//		{
-//			i=0;
-//		}
-//	}
-//	while(*p==0)//判断出第几个，即最后未变成0的数 
-//	{
-//		p++;
-//	}
-//	printf("剩下的数是：%d\n",*p);
-//	return 0;
-//}
-
-//#include <stdio.h> 
-//int main()
-//{
-//	int a[100],i,n,k=0,m=0,*p=a;//n为数字个数，k为123循环，m为退出
-//	printf("请输入数字个数：\n");
-//	scanf("%d",&n);	//输如个数 
-//	for(i=0;i<n;i++)
-//	{
-//		a[i]=i+1;	//对各个元素进行编号 
-//	}
-//	//进行逻辑循环 
-//	i=0;
-//	while(m<n-1)
-//	{
-//		if(*(p+i) != 0) 	//遍历剩下的元素 
-//		{
-//			k++;
-//		}
-//		if(k == 3)
-//		{
-//			*(p+i)=0;	//退出的标志 
-//			m++;
-//			k=0; 
+//			*(p+i)=0;
+//			k=0;m++;
 //		}
 //		i++;
 //		if(n==i)
@@ -185,339 +26,547 @@
 //			i=0;
 //		}
 //	}
-//	while(*p == 0)	//判断出不为零的数就是结果 
+//	while(*p == 0)
 //	{
 //		p++;
 //	}
-//	printf("循环剩下的数字是：%d\n",*p);
+//	printf("%d\n",*p);
 //	return 0;
-//}
-
-//#include <stdio.h> 
-//int main()
-//{
-//	int calculate(char *p);
-//	char a[100];
-//	printf("请输入您的字符串：\n");
-//	scanf("%s",a);
-//	printf("长度是：%d",calculate(a));
-//	return 0;
-//}
-//int calculate(char *p)
-//{
-//	int c=0;
-//	while(*p != '\0')
-//	{
-//		c++;
-//		p++;
-//	}
-//	return c;
 //}
 
 //#include <stdio.h>
+//#include <string.h>
 //int main()
 //{
-//	int a[100],i,n,m=0,k=0,*p=a;
-//	printf("请输入数字个数：\n");
-//	scanf("%d",&n);
+//	char a[100],*p=a;
+//	int n,i,b_n=0,s_n=0,m_n=0,p_n=0,o_n=0;
+//	printf("请随便输入字符串：\n");
+//	gets(a);
+//	n=strlen(a);
 //	for(i=0;i<n;i++)
 //	{
-//		a[i]=i+1;
-//	}
-//	i=0;
-//	while(m<n-1)
-//	{
-//		if(*(p+i) != 0)
+//		if(*(p+i)>='a' && *(p+i)<='z')
 //		{
-//			k++;
+//			s_n++;
 //		}
-//		if(k==3)
+//		else if(*(p+i)>='A' && *(p+i)<='Z')
 //		{
-//			*(p+i)=0;
-//			k=0;
-//			m++;
+//			b_n++;
 //		}
-//		i++;
-//		if(i==n)
+//		else if(*(p+i)>='0' && *(p+i)<='9')
 //		{
-//			i=0;
+//			m_n++;
+//		}
+//		else if(*(p+i) == ' ')
+//		{
+//			p_n++;
+//		}
+//		else
+//		{
+//			o_n++;
 //		}
 //	}
-//	while(*p == 0 )
-//	{
-//		p++;
-//	}
-//	printf("剩下的数字是：%d",*p);
+//	printf("大写：%d\n",b_n);
+//	printf("小写：%d\n",s_n);
+//	printf("数字：%d\n",m_n);
+//	printf("空格：%d\n",p_n);
+//	printf("其他：%d\n",o_n);
 //	return 0;
 //}
-
 //#include <stdio.h>
+//void trans(int (*s)[3], int x, int y);        //定义转置函数
 //int main()
 //{
-//	int lenth(char *p);
-//	char a[100];
-//	printf("请输入字符串：\n");
-//	gets(a);
-//	printf("所输入的字符串长度是：%d\n",lenth(a));
-//	return 0;
+//    int a[3][3], *p, i, j;
+//    for (p=*a, printf("Please enter array: "); p<*a+9; scanf("%d", p++));    //输入矩阵元素
+//    trans(a, 3, 3);                                                          //调用转置函数
+//    for (i=0; i<3; printf("\n"), i++)                                        //输出矩阵
+//        for (j=0; j<3; printf("%d ", *(*(a+i)+j++)));
+//    return 0;
 //}
-//int lenth(char *p)
+////转置函数
+//void trans(int (*s)[3], int x, int y)
 //{
-//	int c;
-//	while(*p != '\0')
-//	{
-//		c++;
-//		p++;
-//	}
-//	return  c;
+//    int i, j, t;
+//    for (i=0; i<x; i++)
+//        for (j=0; j<y; i!=j&&i<j ? t=*(*(s+i)+j), *(*(s+i)+j)=*(*(s+j)+i), *(*(s+j)+i)=t, j++ : j++);
 //}
 
 //#include<stdio.h>
-//#include<string.h>
+//void convert(int (*p)[3])
+//{
+//	int i,j,temp;
+//    for(i=0;i<3;i++)
+//	 for(j=0;j<i;j++)
+//	 {
+// 		temp=*(*(p+i)+j);
+// 		*(*(p+i)+j)=*(*(p+j)+i);
+// 		*(*(p+j)+i)=temp;
+// 	 }
+//}
 //int main()
 //{
-//	int copy(char *p1,char *p2,int m);
-//	char p[20],q[20];
-//	int m,i;
-//	printf("请输入p的字符串：");
-//	gets(p);
-//	printf("请输入m的值:");
-//	scanf("%d",&m);
-//	if(strlen(p)<m)  //判断字符串p的长度是否比m的小
-//	{
-//		printf("error!");
-//	}
-//	copy(p,q,m);
-//	printf("%s\n",q);
-//	return 0;
-//}
-//int copy(char *p1,char *p2,int m)
-//{
-//	p1=p1+(m-1);//或直接将指针p1的地址指向m的位置
-//	while(*p1!='\0')
-//	{
-//		*p2=*p1;
-//		p1++;
-//		p2++;
-//	}
-//	*p2='\0';
+//	int a[3][3];
+//	int (*p)[3],i,j,temp;
+//	p=a;
+//	for(i=0;i<3;i++)
+//	 for(j=0;j<3;j++)
+//	 scanf("%d",&a[i][j]);
+//    convert(p);
+//    printf("after convert:\n");
+//    for(i=0;i<3;i++)
+//     {
+//     	for(j=0;j<3;j++)
+//	    printf("%d ",*(*(p+i)+j));
+//     	printf("\n");
+//     } 
+//	 return 0; 
 //}
 
-//#include <string.h>
 //#include <stdio.h>
 //int main()
 //{
-//	int lenth(char *p);
-//	char a[100];
-//	printf("请输入字符串：\n");
-//	gets(a);
-//	printf("字符串长度是：%d\n",lenth(a));
+//	void trans(int (*p)[3]);
+//	int a[3][3],i,j;
+//	int (*q)[3];
+//	printf("请输入数组：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<3;j++)
+//		{
+//			scanf("%d",&a[i][j]);
+//		}
+//	}
+//	printf("输入的原数组如下：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<3;j++)
+//		{
+//			printf("%-5d",a[i][j]);
+//			if(j == 2)
+//			printf("\n");
+//		}
+//	}
+//	q=a;
+//	trans(q); 
+//	printf("整理后的结果是：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<3;j++)
+//		{
+//			printf("%-5d",a[i][j]);
+//			if(j == 2)
+//			printf("\n");
+//		}
+//	}
 //	return 0;
 //}
-//int lenth(char *p)
+//
+//void trans(int (*p)[3])
 //{
-//	int c;
-//	c=strlen(p);
-//	return c;
+//	int i,j,t;
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<i;j++)
+//		{
+//				t=*(*(p+i)+j);
+//				*(*(p+i)+j)=*(*(p+j)+i);
+//				*(*(p+j)+i)=t;
+//		}
+//	}
 //}
 
+//#include <stdio.h>
+//int main()
+//{
+//	void trans(int (*q)[3]);
+//	int a[3][3],i,j;
+//	int (*p)[3];	//定义二维指针数组
+//	p=a;			//指针指向二维数组首元素地址 
+//	printf("请输入矩阵：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<3;j++)
+//		{
+//			scanf("%d",&*(*(p+i)+j));
+//		}
+//	}
+//	//输出原矩阵
+//	printf("愿矩阵为：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<3;j++)
+//		{
+//			printf("%-5d",*(*(p+i)+j));
+//		}
+//		printf("\n");
+//	 } 
+//	trans(p);		//设计函数
+//	printf("调整后的结果是：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<3;j++)
+//		{
+//			printf("%-5d",a[i][j]);
+//		}
+//		printf("\n");
+//	 } 
+//	return 0;
+//}
+// 
+//void trans(int (*q)[3])
+//{
+//	int t,i,j;
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<i;j++)
+//		{
+//			t=*(*(q+i)+j);
+//			*(*(q+i)+j)=*(*(q+j)+i);
+//			*(*(q+j)+i)=t;
+//		}
+//	}
+// } 
+
+//10 20 30 40 50 60 70 80 90 1 2 3 4 5 6 7 8 9 11 22 33 44 55 66 77
+//#include <stdio.h>
+//int main()
+//{
+//	void trans(int (*p)[5]);
+//	int a[5][5],i,j;
+//	int (*q)[5];
+//	q=a;
+//	printf("请输入一个5*5的整型矩阵：\n");
+//	for(i=0;i<5;i++)
+//	{
+//		for(j=0;j<5;j++)
+//		{
+//			scanf("%d",&a[i][j]);
+//		}
+//	}
+//	printf("原矩阵是：\n");
+//	for(i=0;i<5;i++)
+//	{
+//		for(j=0;j<5;j++)
+//		{
+//			printf("%-5d",a[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	trans(q);
+//	printf("整理后是：\n");
+//	for(i=0;i<5;i++)
+//	{
+//		for(j=0;j<5;j++)
+//		{
+//			printf("%-5d",*(*(q+i)+j));
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//
+//void trans(int (*p)[5])
+//{
+//	int max,min[4],i,j,ti,tj;
+//	void swap(int *,int *);	//定义交换函数 
+////找出最大数 
+//	max=*(*(p+2)+2);
+//	for(i=0;i<5;i++)
+//	{
+//		for(j=0;j<5;j++)
+//		{
+//			if(*(*(p+i)+j)>max)
+//			{
+//				max=*(*(p+i)+j);
+//				ti=i;tj=j;
+//			}
+//		}
+//	}
+//	if(!(ti==2 && tj==2))
+//	swap(*(p+2)+2,*(p+ti)+tj);
+////找出第一个最小数 
+//	min[0]=**p;
+//	for(i=0;i<5;i++)
+//	{
+//		for(j=0;j<5;j++)
+//		{
+//			if(*(*(p+i)+j)<min[0])
+//			{
+//					min[0]=*(*(p+i)+j);
+//					ti=i;tj=j;
+//			}
+//		}
+//	}
+//	if(**p != min[0])
+//	swap(*p,*(p+ti)+tj);
+////找出第二个最小数	
+//	min[1]=*(*(p)+4);
+//	for(i=0;i<5;i++)
+//	{
+//		for(j=0;j<5;j++)
+//		{
+//			if(!(i==0 && j==0))
+//			{
+//				if(*(*(p+i)+j)<min[1])
+//				{
+//					min[1]=*(*(p+i)+j);
+//					ti=i;tj=j;
+//				}
+//			}
+//		}
+//	}
+//	if(*(*(p)+4) != min[1])
+//	swap(*(p)+4,*(p+ti)+tj);
+////找出第三个最小数 
+//	min[2]=*(*(p+4));
+//	for(i=0;i<5;i++)
+//	{
+//		for(j=0;j<5;j++)
+//		{
+//			if(!(i==0 && j==0) && !(i==0 && j==4))
+//			{
+//				if(*(*(p+i)+j)<min[2])
+//				{
+//					min[2]=*(*(p+i)+j);
+//					ti=i;tj=j;
+//				}
+//			}
+//		}
+//	}
+//	if(*(*(p+4)) != min[2])
+//	swap(*(p+4),*(p+ti)+tj);
+////找出第四个最小数	
+//	min[3]=*(*(p+4)+4);
+//	for(i=0;i<5;i++)
+//	{
+//		for(j=0;j<5;j++)
+//		{
+//			if(!(i==0 && j==0)&& !(i==0 && j==4) && !(i==4 && j==0))
+//			{
+//				if(*(*(p+i)+j)<min[3])
+//				{
+//					min[3]=*(*(p+i)+j);
+//					ti=i;tj=j;
+//				}
+//			}
+//		}
+//	}
+//	if(*(*(p+4)+4) != min[3])
+//	swap(*(p+4)+4,*(p+ti)+tj);
+//}
+////交换函数 
+//void swap(int *a,int *b)
+//{
+//	int t;
+//	t=*a;
+//	*a=*b;
+//	*b=t;
+//}
+//10 20 30 40 50 60 70 80 90 1 2 3 4 5 6 7 8 9 11 22 33 44 55 66 77
 //#include <stdio.h> 
-//#include <string.h>
 //int main()
 //{
-//	void deal(char *p1,char *p2,int n);
-//	char a[100],b[100];
-//	int m;
-//	printf("请输入字符串：\n");
-//	gets(a);
-//	printf("请输入开始位移的位数：\n");
-//	scanf("%d",&m);
-//	if(strlen(a)<m)
-//	printf("输入有误，请重新输入!!!");
-//	deal(a,b,m);
-//	printf("处理后的结果是：%s\n",b);
-//	return 0;
-//}
-//void deal(char *p1,char *p2,int n)
-//{
-//	p1=p1+(n-1);
-//	while(*p1 != '\0')
+//	void sorts(int *p,int x,int y);
+//	int a[5][5],i,j;
+//	printf("请输入5*5的矩阵：\n");
+//	for(i=0;i<5;i++)
 //	{
-//		*p2=*p1;
-//		p1++;
-//		p2++;
-//	}
-//	*p2='\0';
-//}
-//#include <stdio.h>
-//int main()
-//{
-//	int a[100],i,n,m=0,k=0,*p=a;
-//	printf("请输入数字：\n");
-//	scanf("%d",&n);
-//	for(i=0;i<n;i++)
-//	{
-//		a[i]=i+1;
-//	}
-//	i=0;
-//	while(m<n-1)
-//	{
-//		if(*(p+i) != 0)
+//		for(j=0;j<5;j++)
 //		{
-//			k++;
-//		}
-//		if(k == 3)
-//		{
-//			*(p+i)=0;
-//			k=0;
-//			m++;
-//		}
-//		i++;
-//		if(n == i)
-//		{
-//			i=0;
+//			scanf("%d",&a[i][j]);
 //		}
 //	}
-//	while(*p==0)
+//	printf("矩阵如下：\n");
+//	for(i=0;i<5;i++)
 //	{
-//		p++;
+//		for(j=0;j<5;j++)
+//		{
+//			printf("%-5d",a[i][j]);
+//		}
+//		printf("\n");
 //	}
-//	printf("剩下的数字是：%d\n",*p);
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	int lenth(char *p);
-//	char a[100];
-//	gets(a);
-//	printf("长度是：%d\n",lenth(a));
-//	return 0;
-//}
-//int lenth(char *p)
-//{
-//	int c;
-//	while(*p != '\0')
+//	sorts(*a,5,5);
+//	printf("整理后如下：\n");
+//	for(i=0;i<5;i++)
 //	{
-//		c++;
-//		p++;
+//		for(j=0;j<5;j++)
+//		{
+//			printf("%-5d",a[i][j]);
+//		}
+//		printf("\n");
 //	}
-//	return c;
-//}
-
-//#include <stdio.h>
-//#include <string.h>
-//int main()
-//{
-//	void copy(char *p1,char *p2,int m);
-//	char a[100],b[100],m;
-//	printf("请输入a的字符串：\n");
-//	gets(a);
-//	printf("请输入从第几个字符开始复制：\n");
-//	scanf("%d",&m);
-//	if(strlen(a)<m)
-//	printf("输入有误，请重新输入！！\n");
-//	copy(a,b,m);
-//	printf("整理后的结果是：%s\n",b);
 //	return 0;
 //}
-//void copy(char *p1,char *p2,int m)
+//void sorts(int *p,int x,int y)
 //{
+//	int i,t,*pmax,*pmin;
+//	pmax=p;
+//	pmin=p;
+//	for(i=0;i<x*y;i++)
+//	{
+//		if(*(p+i)>*pmax)	pmax=p+i;
+//		if(*(p+i)<*pmin)	pmin=p+i;
+//	}
+//	t=*pmax;*pmax=*(p+12);*(p+12)=t;
+//	t=*pmin;*pmin=*p;*p=t;
 //	
-//	while(*p1 != '\0')
+//	pmin=p+1;
+//	for(i=0;i<x*y;i++)
 //	{
-//		*p2=*(p1+m-1);
-//		p1++;
-//		p2++;
+//		if(i==0)	continue;
+//		if(*(p+i)<*pmin)
+//		pmin=p+i;
 //	}
-//	*p2='\0';
+//	t=*pmin;*pmin=*(p+4);*(p+4)=t;
+//	
+//	pmin=p+1;
+//	for(i=0;i<x*y;i++)
+//	{
+//		if(i==0 ||i==4)	continue;
+//		if(*pmin>*(p+i))
+//		pmin=p+i;
+//	}
+//	t=*pmin;*pmin=*(p+20);*(p+20)=t;
+//	
+//	pmin=p+1;
+//	for(i=0;i<x*y;i++)
+//	{
+//		if(i==0||i==4||i==20)	continue;
+//		if(*pmin>*(p+i))
+//		pmin=p+i;
+//	}
+//	t=*(p+24);*(p+24)=*pmin;*pmin=t;
 //}
 
+//
+//
 //#include <stdio.h>
-//#include <string.h>
+//int i, j;
+//void seek(int* s, int a,int b)
+//{
+//	int tmp;
+//	int* pmax = s;
+//	int* pmin = s;
+//	for (i = 0; i < a * b; i++)
+//	{
+//		if (*pmax < *(s + i))pmax = s + i;//找到数组中最大数
+//		if (*pmin > *(s + i))pmin = s + i;//找到数组中最小数
+//	}
+//	tmp = *(s + 12); *(s + 12) = *pmax; *pmax = tmp;//最大的元素放在中心
+//	tmp = *s; *s = *pmin; *pmin = tmp;//最小元素放左上角
+//	pmin = s + 1;
+//	for (i = 0; i < a * b; i++)
+//	{
+//		if (i == 0)continue;//再次遍历时排除已找到的最小元素
+//		if (*pmin > *(s + i))pmin = s + i;//找到数组中最小数
+//	}
+//	tmp = *(s+4); *(s + 4) = *pmin; *pmin = tmp;//第二小元素放右上角
+//	pmin = s + 1;
+//	for (i = 0; i < a * b; i++)
+//	{
+//		if (i == 0||i==4)continue;//再次遍历时排除已找到的最小元素
+//		if (*pmin > *(s + i))pmin = s + i;//找到数组中最小数
+//	}
+//	tmp = *(s + 20); *(s + 20) = *pmin; *pmin = tmp;//第三小元素放右下角
+//	pmin = s + 1;
+//	for (i = 0; i < a * b; i++)
+//	{
+//		if (i == 0 || i == 4||i==20)continue;//再次遍历时排除已找到的最小元素
+//		if (*pmin > *(s + i))pmin = s + i;//找到数组中最小数
+//	}
+//	tmp = *(s + 24); *(s + 24) = *pmin; *pmin = tmp;//第四小元素放左下角
+//}
 //int main()
 //{
-//	char a[100],*p=a;
-//	int big_num=0,small_num=0,space_num=0,math_num=0,other_num=0;
-//	int i,n;
-//	printf("请输入您的字符串：\n");
-//	gets(a);
-//	n=strlen(p);
-//	printf("所输入的字符串长度为：%d\n",n);
-//	for(i=0;i<n;i++)
+//	int s[5][5];
+//	printf("请输入一个5行5列的数组：\n");
+//	for (i = 0; i < 5; i++)
+//		for (j = 0; j < 5; j++)
+//			scanf("%d", &s[i][j]);
+//	seek((int*)s, 5, 5);//转换为一维数组，方便运算
+//	printf("转换后的数组为：\n");
+//	for (i = 0; i < 5; i++)
 //	{
-//		if(*(p+i)>='a' && *(p+i)<='z')
+//		for (j = 0; j < 5; j++)
 //		{
-//			small_num++;
+//			printf("%2d ", s[i][j]);
 //		}
-//		else if(*(p+i)>='A' && *(p+i)<='Z')
-//		{
-//			big_num++;
-//		}
-//		else if(*(p+i)==' ')
-//		{
-//			space_num++;
-//		}
-//		else if(*(p+i)>='0' && *(p+i)<='9')
-//		{
-//			math_num++;
-//		}
-//		else
-//		{
-//			other_num++;
-//		}
+//		printf("\n");
 //	}
-//	printf("大写字母有：%d个\n",big_num);
-//	printf("小写字母有:%d个\n",small_num);
-//	printf("空格有：%d个\n",space_num);
-//	printf("数字有：%d个\n",math_num);
-//	printf("其他字符有:%d个\n",other_num);
+//
 //	return 0;
 //}
+#include <stdio.h>
+int main()
+{
+	void sorts(int *p,int x);
+	int a[5][5],i,j;
+	printf("请输入矩阵：\n");
+	for(i=0;i<5;i++)
+	{
+		for(j=0;j<5;j++)
+		{
+			scanf("%d",&a[i][j]);
+		}
+	}
+	sorts(*a,25);
+	printf("处理后的结果是：\n");
+	for(i=0;i<5;i++)
+	{
+		for(j=0;j<5;j++)
+		{
+			printf("%-3d",a[i][j]);
+		}
+		printf("\n");
+	}
+	return 0;
+}
+void sorts(int *p,int x)
+{
+	int i,t,*pmax=p,*pmin=p;
+	for(i=0;i<x;i++)
+	{
+		if(*(p+i)>*pmax)	pmax=p+i;
+		if(*(p+i)<*pmin)	pmin=p+i;
+	}
+	t=*(p+12);*(p+12)=*pmax;*pmax=t;
+	t=*p;*p=*pmin;*pmin=t;
+	
+	pmin=p+1;
+	for(i=0;i<25;i++)
+	{
+		if(i==0)	continue;
+		if(*(p+i)<*pmin)
+		pmin=p+i;
+	}
+	t=*(p+4);*(p+4)=*pmin;*pmin=t;
+	
+	pmin=p+1;
+	for(i=0;i<x;i++)
+	{
+		if(i==0||i==4)	continue;
+		if(*(p+i)<*pmin)
+		pmin=p+i;
+	}
+	t=*pmin;*pmin=*(p+20);*(p+20)=t;
+	
+	pmin=p+1;
+	for(i=0;i<x;i++)
+	{
+		if(i==0||i==4||i==20)	continue;
+		if(*pmin>*(p+i))
+		pmin=p+i;
+	}
+	t=*pmin;*pmin=*(p+24);*(p+24)=t;
+	
+}
 
 
-//#include <stdio.h>
-//#include <string.h>
-//int main()
-//{
-//	char a[100],*p=a;
-//	int big_num=0,small_num=0,space_num=0,math_num=0,other_num=0;
-//	int i,n;
-//	printf("请输入您的字符串：\n");
-//	gets(a);
-//	n=strlen(p);
-//	printf("所输入的字符串长度为：%d\n",n);
-//	for(i=0;i<n;i++)
-//	{
-//		if(*(p+i)>='a' && *(p+i)<='z')
-//		{
-//			small_num++;
-//		}
-//		else if(*(p+i)>='A' && *(p+i)<='Z')
-//		{
-//			big_num++;
-//		}
-//		else if(*(p+i)==' ')
-//		{
-//			space_num++;
-//		}
-//		else if(*(p+i)>='0' && *(p+i)<='9')
-//		{
-//			math_num++;
-//		}
-//		else
-//		{
-//			other_num++;
-//		}
-//	}
-//	printf("大写字母有：%d个\n",big_num);
-//	printf("小写字母有:%d个\n",small_num);
-//	printf("空格有：%d个\n",space_num);
-//	printf("数字有：%d个\n",math_num);
-//	printf("其他字符有:%d个\n",other_num);
-//	return 0;
-//}
+
+
+
+
 
 
 
