@@ -1,297 +1,209 @@
 //#include <stdio.h> 
 //int main()
 //{
-//	
-//	void average(float (*p)[5]);
-//	void search(float (*p)[5]);
-//	void find_out(float (*p)[5]);
-//	float score[4][5];
-//	int i,j;
-//	for(i=0;i<4;i++)
+//	struct stu			//声明结构体函数 
 //	{
-//		printf("请输入第%d名学生的成绩：\n",i+1);
-//		for(j=0;j<5;j++)
-//		{
-//			scanf("%f",&score[i][j]);
-//		}
-//		printf("\n");
+//		int student_id;
+//		char name[20];
+//		char sex;
+//		char addr[20];
+//	}a={10010,"john",'M',"beijing"};//定义结构体变量a并进行初始化 
+//	printf("NO.%d\nname:%s\nsex:%c\naddr:%s\n",a.student_id,a.name,a.sex,a.addr);
+//	return 0;
+//}
+
+////输入两个学生的学号姓名成绩，输出成绩高的学生信息
+//#include <stdio.h> 
+//int main()
+//{
+//	struct Stu			//声明结构体变量struct Stu 
+//	{
+//		int num;
+//		char name[20];
+//		float score;
+//	}student1,student2;//定义两个结构体变量student1\student2 
+//	printf("请输入学生1的学号、姓名和成绩：\n");
+//	scanf("%d %s %f",&student1.num,student1.name,&student1.score);//输入学生1的数据 
+//	printf("请输入学生2的学号、姓名和成绩：\n");
+//	scanf("%d %s %f",&student2.num,student2.name,&student2.score);//输入学生2的数据 
+//	if(student1.score>student2.score)
+//	{
+//		printf("成绩较高的是：%d\t%s\t%5.2f\n",student1.num,student1.name,student1.score);
 //	}
-//
-//	average(score);
-//	search(score); 
-//	find_out(score);
+//	else if(student1.score>student2.score)
+//	{
+//		printf("成绩较高的是：%d\t%s\t%5.2f\n",student2.num,student2.name,student2.score);
+//	}
+//	else
+//	{
+//		printf("两者成绩相等：\n");
+//		printf("%d\t%s\t%5.2f\n",student1.num,student1.name,student1.score);
+//		printf("%d\t%s\t%5.2f\n",student2.num,student2.name,student2.score);
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//struct person			//声明结构体类型struct person 
+//{
+//	char name[10];		//候选人姓名 
+//	int count;			//候选人的票数 
+//}leader[3]={"li",0,"chen",0,"sun",0};//定义结构体数组并初始化 
+//int main()
+//{
+//	char name_leader[10];	//定义字符数组 
+//	int i,j;
+//	printf("请输入姓名 ：\n");
+//	for(i=0;i<10;i++)
+//	{
+//		scanf("%s",name_leader);	//输入所选的候选人姓名 
+//		for(j=0;j<3;j++)
+//		{
+//			if(strcmp(leader[j].name,name_leader)==0)
+//			leader[j].count ++;
+//		}
+//	}
+//	printf("投票结果如下：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		printf("%5s:%d\n",leader[i].name ,leader[i].count);
+//	}
+//	return 0;
+//}
+
+//#include <string.h>
+//#include <stdio.h> 
+//struct person
+//{
+//	char name[20];
+//	int count;
+//}leader[3]={"chen",0,"sun",0,"li",0};
+//int main()
+//{
+//	int i,j;
+//	char leader_name[20];
+//	printf("请输入名字：\n");
+//	for(i=0;i<10;i++)
+//	{
+//		scanf("%s",leader_name);
+//		for(j=0;j<3;j++)
+//		{
+//			if(strcmp(leader_name,leader[j].name)==0)
+//			leader[j].count++;
+//		}
+//	}
+//	printf("得票数情况如下：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		printf("%5s:%d\n",leader[i].name ,leader[i].count);
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//struct person
+//{
+//	char name[20];
+//	int count;
+//}leader[3]={"li",0,"chen",0,"sun",0};
+//int main()
+//{
+//	int i,j;
+//	char leader_name[20];
+//	printf("请输入名字：\n");
+//	for(i=0;i<10;i++)
+//	{
+//		scanf("%s",leader_name);
+//		for(j=0;j<3;j++)
+//		{
+//			if(strcmp(leader_name,leader[j] .name)== 0)
+//			leader[j].count ++;
+//		}
+//	}
+//	printf("结果如下：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		printf("%5s:%d\n",leader[i].name,leader[i].count);
+//	}
 //	
 //	return 0;
 //}
-//void average(float (*p)[5])
+
+
+////有n个学生的信息，包括学号，姓名，成绩，要求按照成绩的高低排序输出
+//#include <stdio.h> 
+//struct stu				//声明结构体类型struct stu 
 //{
-//	float sum=0,aver;
-//	int i,j;
-//	for(i=0;i<4;i++)
+//	char num[10];
+//	char name[20];
+//	float score;
+//}student[100];			//定义结构体数组 
+//int main()
+//{
+//	int n,i,j;
+//	printf("请输入学生个数：\n");
+//	scanf("%d",&n);		//确定学生数量 
+//	//输入学生的信息 
+//	for(i=0;i<n;i++)
 //	{
-//		for(j=0;j<1;j++)
-//		{
-//			sum+=*(*(p+i)+j);
-//		}
-//		
+//		printf("第%d位学生的学号、姓名和成绩分别是：\n",i+1);
+//		scanf("%s %s %f",&student[i].num,student[i].name ,&student[i].score);
 //	}
-//	aver=sum/4;
-//	printf("第一门课成绩平均分是：%5.2f\n",aver);
-//	printf("\n\n");
-//}
-//void search(float (*p)[5])
-//{
-//	int i,j,count;
-//	float aver,sum=0,a[5];
-//	for(i=0;i<4;i++)
+//	printf("输入的学号、姓名和成绩分别如下：\n");
+//	for(i=0;i<n;i++)
 //	{
-//		int k=0;
-//		aver=0;
-//		count=0;
-//		sum=0;
-//		for(j=0;j<5;j++)
+//		printf("%s\t%s\t%5.2f\n",student[i].num ,student[i].name ,student[i].score ); 
+//	}
+//	printf("\n\n");
+//	
+//	struct stu t;		//定义结构体变量他，用作交换时的临时变量 
+//	for(i=0;i<n-1;i++)
+//	{
+//		for(j=i+1;j<n;j++)
 //		{
-//			a[k]=*(*(p+i)+j);
-//			if(*(*(p+i)+j)<60)
-//			count++;
-//			k++;	
-//		}
-//		
-//		if(count>=2)
-//		{
-//			printf("序号为%d的学生有2门以上的成绩不及格，各项成绩如下：\n",i+1);
-//			for(k=0;k<5;k++)
+//			if(student[i].score<student[j].score)	//进行成绩的比较 
 //			{
-//				printf("%8.2f",a[k]);
-//				sum+=a[k]; 
+//				t=student[i];
+//				student[i]=student[j];
+//				student[j]=t;
 //			}
-//			printf("\n");
-//			aver=sum/5;
-//			printf("平均成绩是：%6.2f\n",aver);
 //		}	
 //	}
-//	printf("\n\n");
-//}
-//
-//void find_out(float (*p)[5])
-//{
-//	int i,j,mark;
-//	float aver,sum=0;
-//	for(i=0;i<4;i++)
+//	printf("排序后的结果如下：\n");
+//	for(i=0;i<n;i++)
 //	{
-//		aver=0;
-//		sum=0;
-//		mark=0;
-//		for(j=0;j<5;j++)
-//		{
-//			sum+=*(*(p+i)+j);
-//			if(*(*(p+i)+j)>85)
-//			mark++;
-//		}
-//		aver=sum/5;
-//		if(aver>90 || mark==5)
-//		{
-//			printf("序号为%d的同学的平均成绩在90以上或者全部课程成绩在85分以上，值得表扬！",i+1);
-//		}	
-//		printf("\n");
+//		printf("%s\t%s\t%5.2f\n",student[i].num ,student[i].name ,student[i].score ); 	
 //	}
-//}
-//
-//#include <stdio.h>
-//int main()
-//{
-//	void average(float (*p)[5]);
-//	void search(float (*p)[5]);
-//	void find(float (*p)[5]);
-//	int i,j;
-//	float score[4][5];
-//	for(i=0;i<4;i++)
-//	{
-//		printf("请输入第%d名学生的成绩：\n",i+1);	
-//		for(j=0;j<5;j++)
-//		{
-//			scanf("%f",&score[i][j]);
-//		}
-//		printf("\n");
-//	}
-//	average(score);
-//	search(score);
-//	find(score);
 //	return 0;
 //}
-//void average(float (*p)[5])
+
+////指向结构体变量的指针 
+////通过指向结构体变量的指针变量输出结构体变量中成员的信息
+//#include <stdio.h> 
+//#include <string.h>
+//struct stu
 //{
-//	int i,j;
-//	float sum=0,aver;
-//	for(i=0;i<4;i++)
-//	{
-//		for(j=0;j<1;j++)
-//		{
-//			sum+=*(*(p+i)+j);
-//		}
-//	}
-//	aver=sum/4;
-//	printf("第一门课程的平均分是：%5.2f\n\n",aver);
-//}
-//
-//void search(float (*p)[5])
+//	char num[20];
+//	char name[20];
+//	char sex;
+//	float score;
+//};
+//int main()
 //{
-//	int i,j,count;
-//	float aver,sum=0;
-//	for(i=0;i<4;i++)
-//	{
-//		sum=0;
-//		aver=0;
-//		count=0;
-//		for(j=0;j<5;j++)
-//		{
-//			if(*(*(p+i)+j)<60)
-//			count++;
-//			sum+=*(*(p+i)+j);
-//		}
-//		if(count>=2)
-//		{
-//			aver=sum/5;
-//			printf("学号为%d的同学至少有两门成绩不及格，其平均分为：%5.2f\n",i+1,aver);
-//		}
-//	}
-//	printf("\n\n");
-//}
-//
-//void find(float (*p)[5])
-//{
-//	int i,j,count;
-//	float sum=0,aver;
-//	for(i=0;i<4;i++)
-//	{
-//		sum=0;
-//		aver=0;
-//		count=0;
-//		for(j=0;j<5;j++)
-//		{
-//			sum+=*(*(p+i)+j);
-//			if(*(*(p+i)+j)>85)
-//			count++;
-//		}
-//		aver=sum/5;
-//		if(aver>90)
-//		printf("学号为%d的同学平均分在90以上，值得表扬！！\n",i+1);
-//		if(count==5)
-//		printf("学号为%d的同学5门科目都在85以上，值得表扬！！\n",i+1);
-//	}
+//	struct stu student;	//定义struct stu 类型的变量student 
+//	struct stu *p;		//定义指向struct stu 类型数据的指针变量p 
+//	p=&student;			//p指向student 
+//	strcpy(student.num ,"007");	//对结构体成员进行赋值； 
+//	strcpy(student.name ,"liming");//用字符串复制函数给 student.name赋值 
+//	student.sex ='M';
+//	student.score =98.5;
+//	printf("%s\t%s\t%c\t%5.2f\n",student.num ,student.name,student.sex ,student.score );
+//	printf("%s\t%s\t%c\t%5.2f\n",p->num,p->name,(*p).sex,(*p).score);
 //	
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	void trans(int *p);
-//	int year,*p;
-//	p=&year;
-//	printf("请输入要转换的月份（阿拉伯数字）：\n");
-//	scanf("%d",&year);
-//	trans(p);
 //	return 0;
 //}
-//void trans(int *p)
-//{
-//	switch(*p)
-//	{
-//		case 1:printf("January\n");
-//			break;
-//		case 2:printf("February\n");
-//			break;
-//		case 3:printf("March\n");
-//			break;
-//		case 4:printf("April\n");
-//			break;
-//		case 5:printf("May\n");
-//			break;
-//		case 6:printf("June\n");
-//			break;
-//		case 7:printf("July\n");
-//			break;
-//		case 8:printf("August\n");
-//			break;
-//		case 9:printf("September\n");
-//			break;
-//		case 10:printf("October\n");
-//			break;
-//		case 11:printf("November\n");
-//			break;
-//		case 12:printf("December\n");
-//			break;
-//		default:printf("请输入正确的月份！！\n");
-//	}
-//}
-//
-//#include <stdio.h>
-//int main()
-//{
-//	void trans(int year);
-//	int year;
-//	printf("请输入月份：\n");
-//	scanf("%d",&year);
-//	trans(year);
-//	return 0;
-//}
-//void trans(int year)
-//{
-//	switch(year)
-//	{
-//		case 1:printf("January\n");
-//			break;
-//		case 2:printf("February\n");
-//			break;
-//		case 3:printf("March\n");
-//			break;
-//		case 4:printf("April\n");
-//			break;
-//		case 5:printf("May\n");
-//			break;
-//		case 6:printf("June\n");
-//			break;
-//		case 7:printf("July\n");
-//			break;
-//		case 8:printf("August\n");
-//			break;
-//		case 9:printf("September\n");
-//			break;
-//		case 10:printf("October\n");
-//			break;
-//		case 11:printf("November\n");
-//			break;
-//		case 12:printf("December\n");
-//			break;
-//		default:printf("请输入正确的月份！！\n");
-//	}
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
