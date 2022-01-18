@@ -1,210 +1,163 @@
 //#include <stdio.h> 
 //int main()
 //{
-//	int i=1,sum=0;
-//	while(i<=100)
+//	char c;
+//	c=getchar();
+//	while(c!='\n')
 //	{
-//		sum+=i;
-//		i++;
-//	}
-//	printf("结果是%d\n",sum);
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	int n=1,i=100,sum;
-//	sum=(i+n)*100/2;
-//	printf("结果是：%d\n",sum);
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	float money,sum=0,aver;
-//	int count,i;
-//	for(i=0;i<1000;i++)
-//	{
-//		printf("请输入第%d位学生的捐款：",i+1);
-//		scanf("%f",&money);
-//		sum=sum+money;
-//		if(sum>=100000)
-//		break;
-//		count ++;
-//		printf("\n");
-//	}
-//	aver=sum/count;
-//	printf("捐款人数为：%d\n人均捐款为%5.2f\n",count,aver);
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	int n;
-//	for(n=100;n<=200;n++)
-//	{
-//		if(n%3!=0)
+//		if((c>='a' && c<='z') || (c>='A'&&c<='Z') )
 //		{
-//			printf("%d\n",n);
+//			if(c>='w' && c<='z' || c>='A' && c<='Z')	
+//				c=c-22;
+//			else
+//				c=c+4;
 //		}
+//		printf("%c",c);
+//		c=getchar();
 //	}
+//	printf("\n");
 //	return 0;
 //}
 
-//#include <stdio.h>
-//int main()
-//{
-//	int n;
-//	for(n=100;n<=200;n++)
-//	{
-//		if(n%3==0)
-//			continue;
-//		printf("%d\n",n);
-//	}
-//	
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	int i,j;
-//	for(i=1;i<=4;i++)
-//	{
-//		for(j=1;j<=5;j++)
-//		{
-//			printf("%4d",i*j);
-//			if(j%5==0)
-//			{
-//				printf("\n");
-//				break;	
-//			}
-//			
-//		}
-//	}
-//	
-//	return 0;
-//}
-
-//#include <math.h>
-//#include <stdio.h>
-//int main()
-//{
-//	float sum=0.0,fenzi=1.0,fenmu=1.0,terms=1.0;
-//	float result;
-//	while(fabs(terms)>=1e-6)
-//	{
-//		sum+=terms;	
-//		fenmu+=2;
-//		fenzi=-fenzi;
-//		terms=fenzi/fenmu;
-//	}
-//	result =sum*4;
-//	printf("result is:%5.2f\n",result);
-//	
-//	return 0;
-//}
-
-////斐波那契数列
+///输入里两个整数，求最大公倍数和最小公约数
 //#include <stdio.h> 
 //int main()
 //{
-//	int i,f1=1,f2=1;
-//	for(i=1;i<=20;i++)
+//	int a,b,c,min,t;	
+//	printf("please input two numbers :\n");
+//	scanf("%d %d",&a,&b);
+//	if(a<b)
 //	{
-//		printf("%12d%12d",f1,f2);
-//		if(i%2==0)
-//			printf("\n");
-//		f1=f1+f2;
-//		f2=f2+f1;
+//		t=a;
+//		a=b;
+//		b=t;
+//	} 
+//	c=a%b;
+//	min=a*b;
+//	while(c!=0)
+//	{
+//		a=b;
+//		b=c;
+//		c=a%b;
 //	}
-//	
+//
+//	printf("最大公约数是：%d\n最小公倍数是：%d\n",b,min/b);
 //	return 0;
 //}
 
-//求质数
+//#include <stdio.h>
+//int main()
+//{
+//	int char_num=0,space_num=0,math_num=0,others_num=0;
+//	char ch;
+//	while((ch=getchar()) != '\n')
+//	{
+//		if(ch>='a' && ch<='z' || ch>='A' && ch<='Z')
+//			char_num++;
+//		else if(ch>='0' && ch<='9')
+//			math_num++;
+//		else if(ch==' ')
+//			space_num++;
+//		else
+//			others_num++;	
+//	}
+//	printf("字母：%d\n数字：%d\n空格：%d\n其他：%d\n",char_num,math_num,space_num,others_num);
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	int i,a,n,sum1=0,sum=0;
+//	printf("请输入要显示的数字：\n");
+//	scanf("%d",&a);
+//	printf("请输入要显示的位数：\n");
+//	scanf("%d",&n);
+//	for(i=1;i<=n;i++)
+//	{
+//		sum1=sum1*10+a;
+//		sum+=sum1;
+//	}
+//	printf("result is :%d",sum);
+//	return 0;
+//}
+
+
+//求阶乘
 //#include <stdio.h> 
 //int main()
 //{
-//	int n,i;
-//	printf("请输入一个大于3的数：\n");
+//	int n,i,a,sum=1,sum1=0;
+//	printf("请输入要阶乘的数：\n");
 //	scanf("%d",&n);
-//	for(i=2;i<=n-1;i++)
+//	for(i=0;i<n;i++)
 //	{
-//		if(n%i==0)
-//		break;
+//		a=i+1;
+//		sum=sum*a;
+//		sum1+=sum;
+//		
 //	}
-//	if(i>=2&&i<=n-1)
-//		printf("不是质数\n");
-//	else
-//		printf("是质数\n");
+//	printf("%d! = %d",n,sum1);
 //	return 0;
 //}
-//中间数 
-//#include <stdio.h>
-//int main()
-//{
-//	int i,n,a;
-//	printf("请输入大于3的数：\n");
-//	scanf("%d",&n);
-//	a=n/2;
-//	for(i=2;i<=a;i++)
-//	{
-//		if(n%i==0)
-//		break;
-//	}
-//	if(i==a+1)
-//		printf("是素数\n");
-//	else
-//		printf("不是素数\n");
-//	return 0;
-//}
-//开平方
-//#include <stdio.h>
+
+//水仙花数
 //#include <math.h> 
-//int main()
-//{
-//	int n,i,k;
-//	printf("please input a number:\n");
-//	scanf("%d",&n);
-//	k=sqrt(n);
-//	for(i=2;i<=k;i++)
-//	{
-//		if(n%i==0)
-//		break;
-//	}
-//	if(i>=k+1)
-//		printf("是素数\n");
-//	else
-//		printf("不是素数\n");
-//	return 0;
-//}
-//#include <math.h>
 //#include <stdio.h>
 //int main()
 //{
-//	int i,n,k,count;
-//	printf("素数如下：\n"); 
-//	for(n=100;n<=200;n++)
+//	int n,i,g,s,b;
+//	for(i=100;i<1000;i++)
 //	{
-//		k=sqrt(n);
-//		for(i=2;i<=k;i++)
-//		{
-//			if(n%i==0)
-//				break;
-//		}
-//		if(i>=k+1)
-//		{
-//			printf("%d\n",n);	
-//			count ++;
-//		}
+//		b=i/100;
+//		s=(i-b*100)/10;
+//		g=i-b*100-s*10;
+//		n=pow(g,3)+pow(s,3)+pow(b,3);
+//		if(n==i)
+//			printf("%d\n",i);
 //	}
-//	printf("一共有%d个\n",count);
 //	return 0;
 //}
+
+#include <stdio.h>
+int main()
+{
+	int i,j,sum=0,k;
+	for(i=1;i<=1000;i++)
+	{
+		sum=0;
+		for(j=1;j<i;j++)
+		{
+			if(i%j==0)
+			{
+				sum+=j;
+				if(sum==i)
+				{
+					printf("%d its factors are ",i);
+					for(k=1;k<i;k++)
+					{
+						if(i%k==0)
+							printf("%4d",k);
+					}
+					printf("\n");
+				}
+			}
+		}	
+	}
+	
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
