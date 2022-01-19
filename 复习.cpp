@@ -1,156 +1,166 @@
-//#include <stdio.h> 
+//#include <stdio.h>
 //int main()
 //{
-//	char c;
-//	c=getchar();
-//	while(c!='\n')
+//	int i,j,sum=0,k;
+//	for(i=1;i<1000;i++)
 //	{
-//		if((c>='a' && c<='z') || (c>='A'&&c<='Z') )
+//		sum=0;
+//		for(j=1;j<i;j++)
 //		{
-//			if(c>='w' && c<='z' || c>='A' && c<='Z')	
-//				c=c-22;
-//			else
-//				c=c+4;
+//			if(i%j==0)
+//			{
+//				sum+=j;
+//				if(sum==i)
+//				{
+//					printf("%d 是完数，其因子如下：",i);
+//					for(k=1;k<i;k++)
+//					{
+//						if(i%k==0)
+//						printf("%5d",k);
+//					}
+//					printf("\n");
+//				}
+//				
+//			}
 //		}
-//		printf("%c",c);
-//		c=getchar();
-//	}
-//	printf("\n");
+//	}	
 //	return 0;
 //}
 
-///输入里两个整数，求最大公倍数和最小公约数
-//#include <stdio.h> 
+//#include <stdio.h>
 //int main()
 //{
-//	int a,b,c,min,t;	
-//	printf("please input two numbers :\n");
-//	scanf("%d %d",&a,&b);
-//	if(a<b)
+//	int i,f1=1,f2=1;
+//	for(i=1;i<=20;i++)
 //	{
-//		t=a;
-//		a=b;
-//		b=t;
-//	} 
-//	c=a%b;
-//	min=a*b;
-//	while(c!=0)
-//	{
-//		a=b;
-//		b=c;
-//		c=a%b;
+//		printf("%12d%12d",f1,f2);
+//		if(i%4==0)
+//		printf("\n");	
+//		f1=f1+f2;
+//		f2=f2+f1;
 //	}
+//	return 0;
+//}
 //
-//	printf("最大公约数是：%d\n最小公倍数是：%d\n",b,min/b);
+//#include <stdio.h>
+//int main()
+//{
+//	int f1=2,f2=3;
+//	int f3=1,f4=2;
+//	int fz,fm,i;
+//	float terms,sum=0;
+//	sum=1/2+3/2;
+//	for(i=1;i<20;i++)
+//	{
+//		fz=f1+f2;
+//		f1=f2;f2=fz;
+//		
+//		fm=f3+f4;
+//		f3=f4;f4=fm;
+//		
+//		terms=fz/fm;
+//		sum+=terms;
+//	}
+//	printf("result is:%f",sum);
+//	
 //	return 0;
 //}
 
 //#include <stdio.h>
 //int main()
 //{
-//	int char_num=0,space_num=0,math_num=0,others_num=0;
-//	char ch;
-//	while((ch=getchar()) != '\n')
+//	int i;
+//	float s=100.0,sum=100.0,last;
+//	for(i=1;i<10;i++)
 //	{
-//		if(ch>='a' && ch<='z' || ch>='A' && ch<='Z')
-//			char_num++;
-//		else if(ch>='0' && ch<='9')
-//			math_num++;
-//		else if(ch==' ')
-//			space_num++;
-//		else
-//			others_num++;	
-//	}
-//	printf("字母：%d\n数字：%d\n空格：%d\n其他：%d\n",char_num,math_num,space_num,others_num);
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	int i,a,n,sum1=0,sum=0;
-//	printf("请输入要显示的数字：\n");
-//	scanf("%d",&a);
-//	printf("请输入要显示的位数：\n");
-//	scanf("%d",&n);
-//	for(i=1;i<=n;i++)
-//	{
-//		sum1=sum1*10+a;
-//		sum+=sum1;
-//	}
-//	printf("result is :%d",sum);
-//	return 0;
-//}
-
-
-//求阶乘
-//#include <stdio.h> 
-//int main()
-//{
-//	int n,i,a,sum=1,sum1=0;
-//	printf("请输入要阶乘的数：\n");
-//	scanf("%d",&n);
-//	for(i=0;i<n;i++)
-//	{
-//		a=i+1;
-//		sum=sum*a;
-//		sum1+=sum;
+//		s=s/2.0;
+//		sum+=2*s;
 //		
 //	}
-//	printf("%d! = %d",n,sum1);
+//	last=s;
+//	printf("经过的路程有%f，最后一次高度是：%f",sum,last);
 //	return 0;
 //}
 
-//水仙花数
-//#include <math.h> 
+
 //#include <stdio.h>
 //int main()
 //{
-//	int n,i,g,s,b;
-//	for(i=100;i<1000;i++)
+//	int i,n=1;
+//	for(i=0;i<9;i++)
 //	{
-//		b=i/100;
-//		s=(i-b*100)/10;
-//		g=i-b*100-s*10;
-//		n=pow(g,3)+pow(s,3)+pow(b,3);
-//		if(n==i)
-//			printf("%d\n",i);
+//		n=(n+1)*3-1;
+//	}
+//	printf("%d\n",n);
+//	
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	int i,j,k;
+//	for(i=1;i<=4;i++)
+//	{
+//		for(j=0;j<3-(i-1);j++)
+//			printf(" ");
+//		for(k=0;k<2*i-1;k++)
+//			printf("*");
+//		printf("\n");
+//	}
+//	for(i=1;i<=3;i++)
+//	{
+//		for(j=0;j<i;j++)
+//			printf(" ");
+//		for(k=0;k<7-2*i;k++)
+//			printf("*");
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//
+//#include <stdio.h>
+//int main()
+//{
+//	int i,j;
+////	for(i=1;i<=5;i++)
+////	{
+////		for(j=0;j<i;j++)
+////		{
+////			printf("*");
+////		}
+////		printf("\n");
+////	}
+//	for(i=1;i<=5;i++)
+//	{
+//		for(j=5;j>=i;j--)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
 //	}
 //	return 0;
 //}
 
-#include <stdio.h>
-int main()
-{
-	int i,j,sum=0,k;
-	for(i=1;i<=1000;i++)
-	{
-		sum=0;
-		for(j=1;j<i;j++)
-		{
-			if(i%j==0)
-			{
-				sum+=j;
-				if(sum==i)
-				{
-					printf("%d its factors are ",i);
-					for(k=1;k<i;k++)
-					{
-						if(i%k==0)
-							printf("%4d",k);
-					}
-					printf("\n");
-				}
-			}
-		}	
-	}
-	
-	return 0;
-}
-
-
-
-
+//
+//#include <stdio.h>
+//int main(void)
+//{
+//	int i,j,k;
+//	for(i=1;i<=5;i++)
+//	{
+//		for(j=0;j<5-i;j++)
+//			printf(" ");
+//		for(k=0;k<i;k++)
+//		{
+//			printf("*");
+//		}
+//		printf("\n");
+//	}
+//	
+//	
+//	return 0;
+//}
 
 
 
