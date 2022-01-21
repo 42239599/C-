@@ -1,71 +1,63 @@
+//筛选法求100以内素数
 //#include <stdio.h>
-//int main()
+//#include <math.h> 
+//int main(void)
 //{
-//	int i,a[10];
-//	for(i=0;i<10;i++)
+//	int i,k,j;
+//	for(i=2;i<=100;i++)
 //	{
-//		scanf("%d",&a[i]);
-//		}	
-//	printf("逆序排序为：\n");
-//	for(i=9;i>=0;i--)
-//		printf("%d\t",a[i]);
-//	
+//		k=sqrt(i);
+//		for(j=2;j<=k;j++)
+//		{
+//			if(i%j==0)
+//			break;
+//		}
+//		if(j>k)
+//		printf("%d\n",i);	
+//	}	
+//	return 0;
+//}
+
+// 
+//#include <stdio.h> 
+//int main(void)
+//{
+//	int a[100],i,j,k=0;
+//	for(i=0;i<100;i++)
+//	{
+//		a[i]=i+1;
+//	}
+//	a[0]=0;
+//	for(i=1;i<99;i++)
+//	{
+//		for(j=i+1;j<100;j++)
+//		{
+//			if(a[j] != 0 && a[i] != 0)
+//			{
+//				if(a[j]%a[i]==0)
+//					a[j]=0;
+//			}
+//		}
+//	}
+//	printf("筛选法的出的结果如下：\n");
+//	for(i=1;i<100;i++)
+//	{
+//		if(a[i]!=0)
+//			printf("%2d\n",a[i]);
+//	}
 //	return 0;
 //}
 
 //#include <stdio.h>
 //int main(void)
 //{
-//	int i,f1=1,f2=2;
-//	for(i=1;i<=20;i++)
-//	{
-//		printf("%12d%12d",f1,f2);
-//		f1=f1+f2;
-//		f2=f1+f2;
-//		if(i%4==0)
-//			printf("\n");
-//	}
-//	int f[20]={1,1};
-//	int i;
-//	for(i=2;i<20;i++)
-//	{
-//		f[i]=f[i-1]+f[i-2];
-//	}
-//	for(i=0;i<20;i++)
-//	{
-//		if(i%5==0)
-//			printf("\n");
-//		printf("%12d",f[i]);
-//	}
-//	printf("\n");
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main(void)
-//{
-//
 //	int a[10],i,j,t;
-//	printf("please input 10 numbers:\n");
+//	printf("please input 10 number:\n");
 //	for(i=0;i<10;i++)
 //	{
 //		scanf("%d",&a[i]);
 //	}
 //	
-////冒泡法小到大 	
-////	for(j=0;j<9;j++)
-////	{
-////		for(i=0;i<9-j;i++)
-////		{
-////			if(a[i]>a[i+1])
-////			{
-////				t=a[i];
-////				a[i]=a[i+1];
-////				a[i+1]=t;
-////			}
-////		}
-////	}
-////选择法小到大
 //	for(i=0;i<9;i++)
 //	{
 //		for(j=i+1;j<10;j++)
@@ -77,140 +69,216 @@
 //				a[j]=t;
 //			}
 //		}
-//		}	
-//	
-//	printf("排序后结果是：\n");
+//	}
+//	printf("result\n");
 //	for(i=0;i<10;i++)
 //	{
-//		printf("%d\t",a[i]);
+//		printf("%d\n",a[i]);
 //	}
+//	
 //	return 0;
 //}
 
 //#include <stdio.h>
 //int main()
 //{
-//	int a[2][3],b[3][2];
-//	int i,j;
-//	printf("请输入6个数字:\n");
-//	for(i=0;i<2;i++)
+//	int a[3][3],i,j,sum=0;
+//	printf("please input 9 numbers:\n");
+//	for(i=0;i<3;i++)
 //	{
 //		for(j=0;j<3;j++)
 //		{
 //			scanf("%d",&a[i][j]);
-//			b[j][i]=a[i][j];	
 //		}
 //	}
-//	
-//	for(j=0;j<3;j++)
+//	sum=a[1][1];
+//	for(i=0;i<3;i++)
 //	{
-//		for(i=0;i<2;i++)
+//		for(j=0;j<3;j++)
 //		{
-//			printf("%5d",b[j][i]);
+//			if(i=j || (i+j)==2)
+//			{
+//				if(i==j && (i+j)!=2)
+//				sum+=a[i][j];
+//			}
 //		}
-//		printf("\n");
 //	}
+//	printf("%d\n",sum);
+//	
 //	return 0;
 //}
 
 //#include <stdio.h>
 //int main(void)
 //{
-//	int a[3][4],i,j;
-//	printf("please input 12 numbers:\n");
-//	for(i=0;i<3;i++)
-//	{
-//		for(j=0;j<4;j++)
-//		{
-//			scanf("%d",&a[i][j]);
-//		}
-//	}
+//	int a[10]={10,20,21,23,40,42,50,55,80};
+//	int n,i;
+//	printf("请输入要插入的数：\n");
+//	scanf("%d",&n);
+//	printf("\n");
 //	
-//	int max=a[0][0],maxi,maxj;
-//	
-//	for(i=0;i<3;i++)
+//	if(n>=a[0])
 //	{
-//		for(j=0;j<4;j++)
+//		for(i=8;i>=0;i--)
 //		{
-//			if(a[i][j]>max)
+//			if(a[i]>n)
 //			{
-//				max=a[i][j];
-//				maxi=i;maxj=j;	
+//				a[i+1]=a[i];
 //			}
-//		
+//			else
+//			{
+//				a[i+1]=n;
+//				break;
+//			}
 //		}
 //	}
-//	printf("最大数是在第%d行第%d列，是%d",maxi+1,maxj+1,max);
+//	else
+//	{
+//		for(i=8;i>=0;i--)
+//		{
+//			a[i+1]=a[i];
+//		}
+//		a[0]=n;
+//	}	
+//	for(i=0;i<10;i++)
+//	{
+//		printf("%d\n",a[i]);
+//	}
 //	return 0;
 //}
 //
 //#include <stdio.h>
 //int main()
 //{
-//	char a[20],ch,i,word,num=0;
-//	gets(a);
-//	for(i=0;(ch=a[i]) != '\0';i++)
+//	int a[10];
+//	int i,n,j,t;
+//	printf("请输入9个数字：\n");
+//	for(i=0;i<9;i++)
 //	{
-//		if(ch==' ')	word=0;
-//		else if(word==0)
+//		scanf("%d",&a[i]);
+//	}
+//	
+//	for(j=0;j<8;j++)
+//	{
+//		for(i=0;i<8-j;i++)
 //		{
-//			word=1;
-//			num++;
+//			if(a[i]>a[i+1])
+//			{
+//				t=a[i];
+//				a[i]=a[i+1];
+//				a[i+1]=t;
+//			}
 //		}
 //	}
-//	printf("totally is %d\n",num);
-//	return 0;
-//}
-//
-//
-//#include <stdio.h>
-//int main(void)
-//{
-//	char a[19],ch;
-//	int i,word=0,num=0;
-//	printf("请输入句子：\n");
-//	gets(a);
-//	for(i=0;(ch=a[i]) != '\0';i++)
+//	
+//	printf("输入要插入的数：\n");
+//	scanf("%d",&n);	
+//	
+//	if(n>=a[0])
 //	{
-//		if(ch==' ') word=0;
-//		else if(word==0)
+//		for(i=8;i>=0;i--)
 //		{
-//			word=1;
-//			num++;
+//			if(a[i]>n)
+//			{
+//				a[i+1]=a[i];
+//			}
+//			else
+//			{
+//				a[i+1]=n;
+//				break;
+//			}
 //		}
+//		
 //	}
-//	printf("totoally is %d\n",num);
-//	return 0;
-//}
-
-//#include <string.h>
-//#include <stdio.h>
-//int main(void)
-//{
-//	char a[3][20],string[20];
-//	int i;
-//	for(i=0;i<3;i++)
-//		gets(a[i]);
-//	if(strcmp(a[0],a[1])>0)
-//		strcpy(string,a[0]);
 //	else
-//		strcpy(string,a[1]);
-//	if(strcmp(a[2],string)>0)
-//		strcpy(string,a[2]);
-//	printf("\n%s\n",string); 
+//	{
+//		for(i=8;i>=0;i--)
+//		{
+//			a[i+1]=a[i];
+//		}
+//		a[0]=n;
+//	}
+//
+//
+////	
+////	if(n>a[8])
+////	{
+////		a[9]=n;
+////	}
+////	else if(n<a[0])
+////	{
+////		for(i=8;i>=0;i--)
+////		{
+////			a[i+1]=a[i];
+////		}
+////		a[i]=n;
+////	}
+////	else
+////	{
+////		for(i=8;i>=0;i--)
+////		{
+////			if(a[i]>n)
+////				a[i+1]=a[i];
+////			else
+////			{
+////				a[i+1]=n;
+////				break;
+////			}	
+////		}
+////	}
+////	
+//	
+//	printf("result :\n");
+//	for(i=0;i<10;i++)
+//	{
+//		printf("%d\n",a[i]);
+//	}
+//	
 //	return 0;
 //}
 
-#include <stdio.h> 
-int main(void)
-{
-	int a=2;
-	a*=2+3;
-	printf("%d\n",a);
-	
-	
-	return 0;
-}
+//筛选法
+//#include <stdio.h> 
+//int main()
+//{
+//	int a[100],i,j;
+//	for(i=0;i<100;i++)
+//	{
+//		a[i]=i+1;
+//	}
+//	
+//	a[0]=0;
+//	for(i=1;i<99;i++)
+//	{
+//		for(j=i+1;j<100;j++)
+//		{
+//			if(a[i] !=0 && a[j] !=0)
+//			{
+//				if( a[j]%a[i] == 0)
+//				a[j]=0;	
+//			 } 
+//
+//		}
+//	}
+//	for(i=0;i<100;i++)
+//	{
+//		if(a[i]!=0)
+//		printf("%d\n",a[i]);
+//	}
+//	return 0;
+//}
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
