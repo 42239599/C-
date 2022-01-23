@@ -1,134 +1,74 @@
 //#include <stdio.h>
 //int main(void)
 //{
-//	int a[100],i,j;
-//	for(i=0;i<100;i++)
+//	int a[15],i,j,t,n,key;
+//	printf("请输入14个数字：\n");
+//	for(i=0;i<14;i++)
 //	{
-//		a[i]=i+1;
+//		scanf("%d",&a[i]);
 //	}
-//	a[0]=0;
-//	for(i=1;i<99;i++)
+//
+//	
+//	for(j=0;j<13;j++)
 //	{
-//		for(j=i+1;j<100;j++)
+//		for(i=0;i<13-j;i++)
 //		{
-//			if(a[i]!=0 && a[j]!=0)
+//			if(a[i]>a[i+1])
 //			{
-//				if(a[j]%a[i]==0)
-//					a[j]=0;
+//				t=a[i];
+//				a[i]=a[i+1];
+//				a[i+1]=t;
 //			}
 //		}
 //	}
-//	printf("result is:\n");
-//	for(i=1;i<100;i++)
-//	{
-//		if(a[i]!=0)
-//		printf("%d\n",a[i]);
-//	}
 //	
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	int a[10]={10,20,23,24,50,54,56,70,88};
-//	int i,n;
-//	printf("please input the inseart number:\n");
-//	scanf("%d",&n);
+//	printf("请输入要插入的数字:\n");
+//	scanf("%d",&key);	
 //	
-//	if(n<a[0])
+//	if(key<a[0])
 //	{
-//		for(i=8;i>=0;i--)
+//		for(i=13;i>=0;i--)
 //		{
 //			a[i+1]=a[i];
 //		}
-//		a[0]=n;
+//		a[0]=key;
 //	}
+//	
 //	else
 //	{
-//		for(i=8;i>=0;i--)
+//		for(i=13;i>=0;i--)
 //		{
-//			if(a[i]>n)
+//			if(a[i]>key)
 //				a[i+1]=a[i];
 //			else
 //			{
-//				a[i+1]=n;
+//				a[i+1]=key;
 //				break;
 //			}
 //		}
 //	}
 //	
-//	printf("result is :\n");
-//	for(i=0;i<10;i++)
+//	printf("result is:\n");
+//	for(i=0;i<15;i++)
 //	{
 //		printf("%d\n",a[i]);
 //	}
 //	return 0;
 //}
 
-
 //#include <stdio.h>
 //int main(void)
 //{
-//	int a[6]={8,6,5,4,2,1};
-//	int mid,j,i,t;
-//	mid=6/2;
-//	for(i=0,j=5;i<mid;i++,j--)
-//	{
-//		t=a[i];
-//		a[i]=a[j];
-//		a[j]=t;
-//	 } 
-//	printf("result is:\n");
-//	for(i=0;i<6;i++)
-//	{
-//		printf("%d\t",a[i]);
-//	}
+//	int a[100][100],i,j,n;
+//	printf("请输入行数：\n");
+//	scanf("%d",&n);
 //	
-//	return 0;
-//}
-
-//杨辉三角
-//#include <stdio.h> 
-//int main(void)
-//{
-//	int a[100][100],i,j,n;
-//	printf("请输入希望排到的行\n");
-//	scanf("%d",&n);
 //	for(i=0;i<n;i++)
 //	{
 //		for(j=0;j<=i;j++)
 //		{
-//			if(j==0 || j==i)
-//			{
-//				a[i][j]=1;
-//				printf("%4d",a[i][j]);
-//				if(i>1 && j>0)
-//				{
-//					a[i][j]=a[i-1][j-1]+a[i-1][j];
-//					printf("%4d",a[i][j]);	
-//				}	
-//			}
-//		}
-//		printf("\n");
-//	}
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main(void)
-//{
-//	int a[100][100],i,j,n;
-//	printf("please input :\n");
-//	scanf("%d",&n);
-//	for(i=0;i<n;i++)
-//	{
-//		for(j=0;j<=i;j++)
-//		{
-//			if(j==0 || j==i)
-//			{
-//				a[i][j]=1;
-//			}
+//			if(j==0 || i==j)
+//			a[i][j]=1;
 //		}
 //	}
 //	
@@ -140,120 +80,189 @@
 //		}
 //	}
 //	
+//	printf("result is:\n");
 //	for(i=0;i<n;i++)
 //	{
 //		for(j=0;j<=i;j++)
-//		{
-//			printf("%5d",a[i][j]);
-//		}
+//		printf("%5d",a[i][j]);
 //		printf("\n");
 //	}
 //	return 0;
 //}
 
-#include <stdio.h>
-int main(void)
-{
-	void sort(int a[],int x,int n);
-	int a[15]={2,4,6,8,10,12,14,16,18,20,22,24,26,28,30};
-	int n;
-	printf("请输入要查找的数：\n");
-	scanf("%d",&n); 
-	sort(a,15,n);
-	return 0;
-}
-void sort(int a[],int x,int n)
-{
-	int right,left,mid;
-	right=x-1;left=0;
-	while(right >= left)
-	{
-		mid=(right+left)/2;
-		if(a[mid]<n)
-		{
-			left=mid+1;
-		}
-		if(a[mid]>n)
-		{
-			right=mid-1;
-		}
-		if(a[mid]==n)
-		{
-			printf("找到了,在第%d的位置\n",mid+1);
-			break;			
-		}
-	}
-	if(n!=a[mid])
-		printf("没找到\n");
-}
-
 //#include <stdio.h>
-//void zb(int key,int a[],int n)
-//{
-//	int mid,low,high,i;
-//	int  count1=0,count=0;
-//	low=0;
-//	high=n-1;
-//	while(high>=low)
-//	{
-//		count++;
-//		mid=(low+high)/2;
-//		if(key<a[mid])
-//		{
-//			high=mid-1;
-//		}
-//		else if(key>a[mid])
-//		{
-//			low=mid+1;
-//		}
-//		if(key == a[mid])
-//		{
-//			printf("找到元素 %d 了，经过 %d 次循环找到的，a[%d]=%d\n",key,count,mid,key);
-//			count1++;
-//			break;
-//		}
-//		if(count1==1)
-//		{
-//			printf("输入的元素有误，请从新输入!\n");
-//		}
-//	}	
-//}
-//
 //int main()
 //{
-//	int  a[100],key,i,j,t,n;
-//	void zb(int key,int a[],int n);
-//	printf("请输入元素个数：\n");
-//	scanf("%d",&n);
-//	printf("按照从小到大的顺序输入所有元素:\n");
-//	for(i=0;i<n;i++)
+//	int a[15],i,j,key,mid,high,low,t,count=0;
+//	printf("please input 15 numbers:\n");
+//	for(i=0;i<15;i++)
 //	{
 //		scanf("%d",&a[i]);
-//	} 
-//	printf("请输入要查找的数:\n");
-//	scanf("%d",&key);
+//	}
 //	
-//	for(j=0;j<n-1;j++)
+//	for(i=0;i<14;i++)
 //	{
-//		for(i=j;i<n-1;i++)
+//		for(j=i+1;j<15;j++)
 //		{
-//			if(a[i]>a[i+1])
+//			if(a[i]<a[j])
 //			{
 //				t=a[i];
-//				a[i]=a[i+1];
-//				a[i+1]=t;
+//				a[i]=a[j];
+//				a[j]=t;
 //			}
-//		}	
-//	}//排序 
+//		}
+//	}
 //	
-//	zb(key,a,n);
-//	printf("\n");
+//	printf("please input the key:\n");
+//	scanf("%d",&key);
+//	
+//	low=14;high=0;
+//	while(low>=high)
+//	{
+//		mid=(low+high)/2;
+//		count++;
+//		if(a[mid]>key)
+//		{
+//			high=mid+1;
+//		}
+//		if(a[mid]<key)
+//		{
+//			low=mid-1;
+//		}
+//		if(a[mid]==key)
+//		{
+//			printf("get it!!");
+//			printf("该数经过%d次循环找到，在第%d的位置。\n",count,mid+1);
+//			break;
+//		}
+//	
+//	}
+//	if(a[mid] != key)
+//	printf("没找到\n");		
+//	
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	char a[3][80],ch;
+//	int i , j,b_num=0,s_num=0,math_num=0,space_num=0,others_num=0;
+//	printf("请输入句子：\n");
+//	for(i=0;i<3;i++)
+//		gets(a[i]);
+//	
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;(ch=a[i][j]) != '\0';j++)
+//		{
+//			if(ch>='a' && ch<='z') 
+//				s_num++;
+//			else if(ch>='A' && ch<='Z')
+//				b_num++;
+//			else if(ch>='0' && ch<='9')
+//				math_num++;
+//			else if(ch==' ')
+//				space_num++;
+//			else	
+//				others_num++;
+//		}	
+//	}
+//
+//	printf("大写有%d个\n",b_num);
+//	printf("小写有%d个\n",s_num);	
+//	printf("数字有%d个\n",math_num);	
+//	printf("空格有%d个\n",space_num);
+//	printf("其他有%d个\n",others_num);		
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main()
+//{
+//	int i,j,k;
+//	for(i=0;i<5;i++)
+//	{
+//		for(j=0;j<i;j++)
+//		{
+//			printf(" ");
+//		}
+//		for(k=0;k<5;k++)
+//			printf("%c",'*');
+//		printf("\n");
+//	}
+//	
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//int main(void)
+//{
+//	char a[10],ch;
+//	int i,str;
+//	printf("请输入原文：\n");
+//	gets(a);
+//	
+//	printf("原文为:%s\n",a);
+//	
+//	str=strlen(a);
+//	for(i=0;i<str;i++)
+//	{
+//		a[i]=ch+
+//	}
+//	
+//	return 0;
+//}
+
+//#include<stdio.h>
+// 
+//int main() {
+//	char string[20];
+//	int i;
+//	gets(string);
+//	printf("\nKEY:\n");
+//	puts(string);
+//	for (i = 0; i < 20; i++) {
+//		if (string[i] >= 'a' && string[i] <= 'z')
+//			string[i] = 27-(string[i]-96)+96;
+//		if (string[i] >= 'A' && string[i] <= 'Z')
+//			string[i] = 27-(string[i]-64)+64;
+//	}
+//	printf("\nTXT:\n");
+//	puts(string);
 //	return 0;
 //}
 
 
-
-
+//#include <stdio.h>
+//int main(void)
+//{
+//	char a[20];
+//	int i;
+//	printf("请输入原文：\n");
+//	gets(a);
+//	
+//	printf("原文是:");
+//	puts(a);
+//	
+//	for(i=0;i<20;i++)
+//	{
+//		if(a[i] >= 'a' && a[i] <= 'z')
+//		{
+//			a[i]=27-(a[i]-96)+96;
+//		}
+//		if(a[i] >='A' && a[i] <= 'Z')
+//		{
+//			a[i]=27-(a[i]-64)+64;
+//		}
+//	}
+//	
+//	printf("密码是:");
+//	puts(a);
+//	
+//	return 0;
+//}
 
 
 
