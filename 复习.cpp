@@ -1,257 +1,188 @@
 //#include <stdio.h> 
-//int main()
+//int main(void)
 //{
-//	void hannuo(int n,char one,char two,char three);
+//	int fac(int n);
+//	int i;
+//	for(i=1;i<=5;i++)
+//		printf("%d != %d\n",i,fac(i));
+//	return 0;
+//}
+//int fac(int n)
+//{
+//	static int f=1;
+//	f=f*n;
+//	return f;
+//	
+//}
+
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	int opa1(int a,int b);
+//	int opa2(int a,int b);
+//	int a,b,greatest,least;
+//	printf("请输入两个数：\n");
+//	scanf("%d %d",&a,&b);
+//	greatest = opa1(a,b);
+//	least = opa2(a,b);
+//	printf("最小公倍数是：%d\n最大公约数是：%d\n",least,greatest);
+//	return 0;
+//}
+////最大公约数 
+//int opa1(int a,int b)
+//{
+//	int t,c;
+//	 if(a<b)
+//	 {
+//	 	t=a;
+//	 	a=b;
+//	 	b=t;
+//	 }
+//	 c=a%b;
+//	 while(c != 0)
+//	 {
+//	 	a=b;
+//	 	b=c;
+//	 	c=a%b;
+//	 }
+//	return b; 
+//}
+////最小公倍数
+//int opa2(int a,int b)
+//{
 //	int m;
-//	printf("请输入碟子：\n");
-//	scanf("%d",&m);
-//	hannuo(m,'A','B','C');
-//	return 0;
+//	m=(a*b)/opa1(a,b);
+//	return m;
 //}
-//void hannuo(int n,char one,char two,char three)
+
+//#include <math.h>
+//#include <stdio.h>
+//int main(void)
 //{
-//	void move(char x,char y);
-//	if(n==1)
-//		move(one,three);
+//	void root1(int a,int b,float p);
+//	void root2(int a,int b,float p);
+//	void root3(int a,int b,int c);
+//	int a,b,c;
+//	float p;
+//	printf("请输入系数a,b,c\n");
+//	scanf("%d %d %d",&a,&b,&c);
+//	p=b*b-4*a*c;
+//	if(p>0)
+//		root1(a,b,p);
+//	else if(p==0)
+//		root2(a,b,p);
 //	else
+//		root3(a,b,c);
+//	return 0;
+//}
+//void root1(int a,int b,float p)
+//{
+//	float x1,x2;
+//	x1=(-b+sqrt(p))/2.0*a;
+//	x2=(-b-sqrt(p))/2.0*a;
+//	printf("x1 = %5.2f\nx2 = %5.2f\n",x1,x2);
+//}
+//
+//void root2(int a,int b,float p)
+//{
+//	float x1;
+//	x1=(-b+sqrt(p))/2.0*a;
+//	printf("x1 = x2 = %5.2f\n",x1);
+//}
+//
+//void root3(int a,int b,int c)
+//{
+//	float x1,x2,p;
+//	float x,y;
+//	p=4*a*c-b*b;
+//	x=(-b)/2.0*a;
+//	y=(sqrt(p))/2.0*a;
+//	printf("x1 = %5.2f + %5.2fi\nx2 = %5.2f - %5.2fi\n",x,y,x,y);
+//}
+
+//#include <stdio.h>
+//#include <math.h>
+//int main(void)
+//{
+//	void Judge(int x);
+//	int n;
+//	printf("请输入数字：\n");
+//	scanf("%d",&n);
+//	Judge(n);
+//	return 0;
+//}
+//void Judge(int x)
+//{
+//	int k,i;
+//	k=sqrt(x);
+//	for(i=2;i<=k;i++)
 //	{
-//		hannuo(n-1,one,three,two);
-//		move(one,three);
-//		hannuo(n-1,two,one,three);
+//		if(x%i==0)
+//			break;
 //	}
+//	if(i<=k)
+//		printf("不是素数\n");
+//	else
+//		printf("是素数\n");
 //	
 //}
-//void move(char x,char y)
+
+
+//#include <stdio.h>
+//int main(void)
 //{
-//	printf("%c-->%c\n",x,y);
-//}
-//
-////输入10个数，输出最大的元素以及该数是第几个
-//#include <stdio.h> 
-//void input(int a[],int x)
-//{
-//	int i;
-//	printf("请输入十个数字：\n");
-//	for(i=0;i<x;i++)
-//		scanf("%d",&a[i]); 
-//}
-//////小到大 
-////void sorting(int a[],int x)
-////{
-////	int i,j,y;
-////	for(j=0;j<x-1;j++)
-////	{
-////		for(i=0;i<x-1-j;i++)
-////		{
-////			if(a[i]>a[i+1])
-////			{
-////				t=a[i];
-////				a[i]=a[i+1];
-////				a[i+1]=t;
-////			}
-////		}
-////	}
-////}
-//
-//void search(int a[],int x)
-//{
-//	int max, i,bits;
-//	max=a[0];
-//	for(i=0;i<x;i++)
+//	void sorts(int a[][3]);
+//	int i,j;
+//	int a[3][3]={1,2,3,4,5,6,7,8,9};
+//	printf("原来的排序是：\n"); 
+//	for(i=0;i<3;i++)
 //	{
-//		if(a[i]>max)
+//		for(j=0;j<3;j++)
 //		{
-//			max=a[i];
-//			bits=i;
+//			printf("%4d",a[i][j]);
 //		}
+//		printf("\n");
 //	}
-//	printf("最大数是%d,在第%d个元素\n",max,bits+1);
-//}
-//
-//int main()
-//{
-//	int a[10];
-//	input(a,10);
-////	sorting(a,10);
-//	search(a,10);
+//	printf("整理后是：\n");
+//	sorts(a);
 //	return 0;
 //}
-
-////一维数组有十个成绩，求平均分
-//#include <stdio.h> 
-//int main(void)
-//{
-//	float average(float score[],int x);
-//	int i;
-//	float aver,score[10];
-//	printf("请输入10个成绩：\n");
-//	for(i=0;i<10;i++)
-//	{
-//		scanf("%f",&score[i]);
-//	}
-//	aver=average(score,10);
-//	printf("平均分是%5.2f\n",aver);
-//	return 0;
-//}
-//float average(float score[],int x)
-//{
-//	float sum=0,aver;
-//	int i;
-//	for(i=0;i<x;i++)
-//	{
-//		sum+=score[i];
-//	}
-//	return aver=sum/x;
-//}
-
-//两个班5和10人，调用一个average函数求平均分 
-//#include <stdio.h>
-//int main(void)
-//{
-//	float average(float array[],int x);
-//	float score1[5],score2[10];
-//	int i;
-//	printf("请输入一班的成绩：\n");
-//	for(i=0;i<5;i++)
-//	{
-//		scanf("%f",&score1[i]);
-//	}
-//	printf("请输入二班的成绩：\n");
-//	for(i=0;i<10;i++)
-//	{
-//		scanf("%f",&score2[i]);
-//	 } 
-//	
-//	printf("一班平均分为%5.2f\n二班平均分为%5.2f\n",average(score1,5),average(score2,10));
-//	
-//	return 0;
-//}
-//float average(float array[],int x)
-//{
-//	int i;
-//	float sum=0,aver;
-//	for(i=0;i<x;i++)
-//	{
-//		sum+=array[i];
-//	}
-//	return aver=sum/x;
-//}
-
-//
-//#include <stdio.h>
-//int main(void)
-//{
-//	void sorts(int a[],int x);
-//	int a[10],i;
-//	printf("请输入十个数：\n");
-//	for(i=0;i<10;i++)
-//	{
-//		scanf("%d",&a[i]);
-//	}
-//	sorts(a,10);
-//	printf("选择排序小到大的是：\n");
-//	for(i=0;i<10;i++)
-//	{
-//		printf("%d\n",a[i]);
-//	}	
-//	
-//	return 0;
-//}
-//void sorts(int a[],int x)
+//void sorts(int a[][3])
 //{
 //	int i,j,t;
-//	for(i=0;i<x-1;i++)
+//	for(i=0;i<=3;i++)
 //	{
-//		for(j=i+1;j<x;j++)
+//		for(j=0;j<=i;j++)
 //		{
-//			if(a[i]>a[j])
+//			if(i!=j)
 //			{
-//				t=a[i];
-//				a[i]=a[j];
-//				a[j]=t;
+//				t=a[i][j];
+//				a[i][j]=a[j][i];
+//				a[j][i]=t;
 //			}
 //		}
 //	}
-//
-//}
-
-////3*4找最大值 
-//#include <stdio.h>
-//int main(void)
-//{
-//	int sorts(int a[][4],int x);
-//	int a[3][4],i,j;
-//	printf("请输入12个数：\n");
+//	
 //	for(i=0;i<3;i++)
 //	{
-//		for(j=0;j<4;j++)
-//			scanf("%d",&a[i][j]);
-//	}
-//
-//	printf("最大数是：%d\n",sorts(a,3));
-//	return 0;
-//}
-//int sorts(int a[][4],int x)
-//{
-//	int max=a[0][0],i,j;
-//	for(i=0;i<x;i++)
-//	{
-//		for(j=0;j<4;j++)
+//		for(j=0;j<3;j++)
 //		{
-//			if(a[i][j]>max)
-//				max=a[i][j];
+//			printf("%4d",a[i][j]);
 //		}
+//		printf("\n");
 //	}
-//	return max;
 //}
 
-//
-//#include <stdio.h>
-//float max=0,min=0;
-//int main(void)
-//{	
-//	float average(float score[],int n);
-//	float aver,score[10]={87,95,68,42,62,85,74,93,65,70};
-//	aver=average(score,10);
-//	printf("最大分数：%5.2f\n最小分数：%5.2f\n平均分数：%5.2f\n",max,min,aver);
-//	return 0;
-//}
-//float average(float score[],int n)
-//{
-//	int i;
-//	float sum=0,aver;
-//	for(i=0;i<n;i++)
-//	{
-//		if(score[i]>max)	max=score[i];
-//		else if(score[i]<min)    min=score[i];
-//		sum+=score[i];
-//	}
-//	return aver=sum/n;
-//}
 
-//#include <stdio.h>
-//float max=0,min=0;
-//int main(void)
-//{
-//	float average(float score[],int n);
-//	float aver,score[10]={74,85,96,89,78,45,56,65,87,94};
-//	aver=average(score,10);
-//	printf("max=%5.2f\nmin=%5.2f\naver=%5.2f\n",max,min,aver);
-//	return 0;
-//}
-//float average(float score[],int n)
-//{
-//	int i;
-//	float aver,sum=0;
-//	max=min=score[0];
-//	for(i=0;i<n;i++)
-//	{
-//		if(score[i]>max)	max=score[i];
-//		if(score[i]<min)	min=score[i];
-//		sum+=score[i];
-//	}
-//	return aver=sum/n;
-//}
+
+
+
+
+
+
+
+
 
 
 
