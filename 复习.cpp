@@ -1,129 +1,54 @@
-//#include <stdio.h>
-//#include <math.h>
-//#include <string.h> 
+//#include <stdio.h> 
 //int main(void)
 //{
-//	void conver(char arr[]);
-//	char arr[10];
-//	printf("请输入十六进制的数：\n");
-//	gets(arr);
-//	conver(arr);
-//	return 0;
-//}
-//void conver(char arr[])
-//{
-//	int i,j=0,n=strlen(arr),sum=0;
-//	int num[100];
-//	for(i=0;i<n;i++)
-//	{
-//		switch(arr[i])
-//		{
-//			case 'A':num[j++]=10;break;
-//			case 'B':num[j++]=11;break;
-//			case 'C':num[j++]=12;break;
-//			case 'D':num[j++]=13;break;
-//			case 'E':num[j++]=14;break;
-//			case 'F':num[j++]=15;break;
-//			default:num[j++]=(arr[i]-'0');break;
-//		}
-//	}
-//	for(i=n-1;i>=0;i--)
-//	{
-//		sum+=num[i]*pow(16,n-1-i);
-//	}
-//	printf("result:%d\n",sum);
-//}
-
-//#include <stdio.h>
-//#include <string.h>
-//int main(void)
-//{
-//	void input(char na[][10],int nu[] );
-//	void sorts(char na[][10],int nu[] );
-//	void search(char na[][10],int nu[],int key);
-//	char name[10][10];
-//	int num[10],n;
-//	input(name,num);
-//	sorts(name,num);
-//	printf("请输入要查找的工号：\n");
-//	scanf("%d",&n);
-//	search(name,num,n);
-//	return 0;
-//}
-//void input(char na[][10],int nu[] )
-//{
-//	
-//	int i;
+//	void sort(int *arr);
+//	int a[10],i,*p;
+//	printf("请输入十个数字：\n");
 //	for(i=0;i<10;i++)
-//	{
-//		printf("请输入第%d位职工的姓名和工号：\n",i+1);
-//		scanf("%s %d",na[i],&nu[i]);
-//	}
+//		scanf("%d",&a[i]);
+//	p=a;
+//	sort(p);
+//	printf("排序结果如下：\n");
+//	for(i=0;i<10;i++)
+//		printf("%d\t",a[i]);
+//	return 0;
 //}
-//void sorts(char na[][10],int nu[] )
+//void sort(int *arr)
 //{
 //	int i,j,t;
-//	char tm[10];
 //	for(i=0;i<9;i++)
 //	{
 //		for(j=i+1;j<10;j++)
 //		{
-//			if(nu[i]>nu[j])
+//			if(*(arr+i)<*(arr+j))
 //			{
-//				t=nu[i] ;
-//				nu[i] =nu[j] ;
-//				nu[j] =t;
-//				strcpy(tm,na[i]);
-//				strcpy(na[i],na[j] );
-//				strcpy(na[j],tm);
+//				t=*(arr+i);
+//				*(arr+i)=*(arr+j);
+//				*(arr+j)=t;
 //			}
 //		}
 //	}
+//}
+
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	int a[12],i,*p;
+//	printf("请输入12个数:\n");
+//	for(i=1;i<=12;i++)
+//	{
+//		scanf("%d",&a[i]);
+//	}
 //	
-//	printf("排序如下：\n");
-//	for(i=0;i<10;i++)
+//	p=a;
+//	for(i=1;i<=12;i++)
 //	{
-//		printf("%d\t%s\n",nu[i],na[i]);
-//		
+//		printf("%4d",*(p+i));
+//		if(i%4==0)
+//		printf("\n");
 //	}
-//}
-//
-//void search(char na[][10],int nu[],int key)
-//{
-//	int i,left,right,mid;
-//	left=0;right=9;
-//	while(left<=right)
-//	{
-//		mid=(left+right)/2;
-//		if(nu[mid]>key)
-//			right=mid-1;
-//		if(nu[mid]<key)
-//			left=mid+1;
-//		if(nu[mid]==key)
-//		{
-//			printf("找到了，职工名是%s\n",na[mid]);	
-//			break;
-//		}
-//		
-//	}
-//	if(nu[mid] != key)
-//		printf("输入有误！！\n");
-//}
-
-//#include <stdio.h>
-//int main(void)
-//{
-//	int a,b,*p1,*p2;
-//
-//	printf("请输入两个需要比较的数：\n");
-//	scanf("%d %d",&a,&b);
-//	p1=&a;p2=&b;	
-//	if(a<b)
-//	{
-//		p1=&b;
-//		p2=&a;
-//	}
-//	printf("大到小的结果是：\n%d\n%d\n",*p1,*p2);
+//	
 //	return 0;
 //}
 
@@ -131,178 +56,388 @@
 //#include <stdio.h>
 //int main(void)
 //{
-//	void opa(int *q1,int *q2);
-//	int a,b,*p1,*p2;
-//	printf("请输入两个数字：\n");
-//	scanf("%d %d",&a,&b);
-//	p1=&a;p2=&b;
-//	opa(p1,p2);
-//	printf("结果是：%d\t%d\n",*p1,*p2);
-//	return 0;
-//}
-//void opa(int *q1,int *q2)
-//{
-//	int t;
-//	if(*q1<*q2)
+//	int a[12],i,*p;
+//	printf("请输入12个数：\n");
+//	for(i=0;i<12;i++)
+//		scanf("%d",&a[i]);
+//	p=a;
+//	for(;p<a+12;p++)
 //	{
-//		t=*q1;
-//		*q1=*q2;
-//		*q2=t;
+//		printf("%4d",*p);
+//		if(i%4==0)
+//			printf("\n");
 //	}
-//}
-
-
-//#include <stdio.h>
-//int main(void)
-//{
-//	void sorts(int *q1,int *q2,int *q3);
-//	int a,b,c,*p1,*p2,*p3;
-//	printf("请输入3个数：\n");
-//	scanf("%d %d %d",&a,&b,&c);
-//	p1=&a;p2=&b;p3=&c;
-//	sorts(p1,p2,p3);
-//	printf("结果是：\n%d\t%d\t%d\t",*p1,*p2,*p3);
+//	
 //	return 0;
 //}
-////void sorts(int *q1,int *q2,int *q3)
-////{
-////	int t;
-////	if(*q1<*q2)
-////	{
-////		t=*q1;
-////		*q1=*q2;
-////		*q2=t;
-////	}
-////	if(*q1<*q3)
-////	{
-////		t=*q1;
-////		*q1=*q3;
-////		*q3=t;
-////	}
-////	if(*q2<*q3)
-////	{
-////		t=*q2;
-////		*q2=*q3;
-////		*q3=t;
-////	}
-////}
-//void sorts(int *q1,int *q2,int *q3)
-//{
-//	void swap(int *qt1,int *qt2);
-//	if(*q1<*q2)	swap(q1,q2);
-//	if(*q1<*q3)	swap(q1,q3);
-//	if(*q2<*q3)	swap(q2,q3);
-//}
-//void swap(int *qt1,int *qt2)
-//{
-//	int t;
-//	t=*qt1;
-//	*qt1=*qt2;
-//	*qt2=t;
-//}
 
 //#include <stdio.h>
 //int main(void)
 //{
-//	int a[10],i,*p;
-//	printf("请输入十个数：\n");
-////	for(i=0;i<10;i++)
-////		scanf("%d",&a[i]);
-//	for(p=a;p<(a+10);p++)
-//		scanf("%d",p);
+//	int a[3][4]={1,2,3,4,5,6,7,8,9,10,12,20};
+//	int *p;
+//	for(p=a[0];p<a[0]+12;p++)
+//	{
+//		if((p-a[0]) % 4 == 0)
+//			printf("\n");
+//		printf("%4d",*p);
+//	}
+//	
+//	return 0;
+//}
+
+
+//#include <stdio.h>
+//int main()
+//{
+//	int a[3][4],i,j;
+//	printf("请输入12个数字：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<4;j++)
+//			scanf("%d",&a[i][j]);
+//	}
+//	printf("输出如下：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<4;j++)
+//			printf("%4d",a[i][j]);
+//		printf("\n");
+//	}
+//	
+//	return 0;
+//}
+
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	int a[3][4],i,j,(*p)[4];
+//	p=a;
+//	printf("请输入12个数：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<4;j++)
+//			scanf("%d",(*(p+i)+j));
+//	}
 //	p=a;
 //	printf("输出：\n");
-//	for(;p<(a+10);p++)
-//		printf("%d\t",*p);
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<4;j++)
+//		{
+//			printf("%4d",*(*(p+i)+j));
+//		}
+//		printf("\n");
+//	}
 //	
 //	return 0;
 //}
 
+
 //#include <stdio.h>
 //int main(void)
 //{
-//	void reverse(int *q,int x);
-//	int n,a[100],i,*p;
-//	printf("请输入输入的数字个数：\n");
-//		scanf("%d",&n);
-//	printf("请输入数字：\n");
-//	for(i=0;i<n;i++)
-//		scanf("%d",&a[i]);
+//	int a[3][4],i,j,(*p)[4];
+//	printf("请输入一个3*4的数字：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<4;j++)
+//			scanf("%d",&a[i][j]);
+//	}
 //	p=a;
-//	reverse(p,n);
-//	printf("结果是：\n");
-//	for(p=a;p<a+n;p++)
-//		printf("%d\t",*p);
-////	int mid,j,t;
-////	mid=n/2;
-////	for(i=0,j=n-1;i<=mid;i++,j--)
-////	{
-////		t=a[i];
-////		a[i]=a[j];
-////		a[j]=t;
-////	}
-////	printf("倒序如下：\n");
-////	for(i=0;i<n;i++)
-////	{
-////		printf("%d\t",a[i]);
-////	}
+//	int row,column;
+//	printf("请输入要查找的行和列：\n");
+//	scanf("%d %d",&row,&column);
+//	
+////	printf("第%d行%d列的数字是：%d\n",row,column,a[row-1][column-1]);
+//	printf("第%d行%d列的数字是：%d\n",row,column,*(*(p+row-1)+column-1));	
 //	return 0;
 //}
-//void reverse(int *q,int x)
+//
+//
+//#include <stdio.h>
+//int main(void)
 //{
-//	int mid,i,j=x-1,t;
-//	mid=x/2;
-//	for(i=0;i<=mid;i++,j--)
+//	void average(float *p,int n);
+//	void search(float (*p)[4],int n);
+//	void find(float (*p)[4]);
+//	float score[3][4];
+//	int i,j ;
+//	for(i=0;i<3;i++)
 //	{
-//		t=*(q+i);
-//		*(q+i)=*(q+j);
-//		*(q+j)=t;
+//		printf("请输入第%d位学生的成绩：\n",i+1);
+//		for(j=0;j<4;j++)
+//			scanf("%f",&score[i][j]);
+//	 } 
+//	
+//	average(*score,12);
+//	search(score,2);
+//	find(score);
+//	return 0;
+//}
+//
+//void average(float *p,int n)
+//{
+//	float sum=0,aver;
+//	int i;
+//	for(i=0;i<12;i++)
+//		sum+=*(p+i);
+//	aver=sum/n;
+//	printf("总平均分是：%5.2f\n",aver);
+//}
+//void search(float (*p)[4],int n)
+//{
+//	int i;
+//	printf("序号为2的成绩是：\n",n);
+//	for(i=0;i<4;i++)
+//	{
+//		printf("%5.2f\t",*(*(p+2)+i));
 //	}
+//}
+//
+//void find(float (*p)[4])
+//{
+//	int i,j,count=0;
+//	printf("至少有一门成绩不及格的有：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<4;j++)
+//		{
+//			count=0;
+//			if(*(*(p+i)+j)<60)
+//				count++;
+//		}
+//		if(count>1)
+//		{
+//			printf("序号为%d的同学至少有2门成绩不及格：\n",i);	
+//			for(j=0;j<4;j++)
+//				printf("%5.2f\t",*(*(p+i)+j));
+//		}		
+//		
+//		printf("\n");
+//	}
+//	
+//}
+
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	char a[20]="i love china!",b[20];
+//	int i;
+//	for(i=0;*(a+i) != '\0';i++)
+//		*(b+i)=*(a+i);
+//	*(b+i)='\0';
+//	printf("b:\n");
+//	for(i=0;*(b+i) != '\0';i++)
+//		printf("%c",*(b+i));
+//	return 0;
 //}
 
 //#include <stdio.h>
 //int main(void)
 //{
-//	void sorts(int x[],int n);
-//	int a[10],i,*p;
-//	printf("请输入十个数字：\n");
-//	for(i=0;i<10;i++)
+//	char a[20]="i love china.",b[20],*p1,*p2;
+//	p1=a;p2=b;
+//	for(;*p1 != '\0';p1++,p2++)
 //	{
-//		scanf("%d",&a[i]);
+//		*p2=*p1;
 //	}
-//	p=a;
-//	sorts(p,10);
-//	printf("排序结果如下：\n");
-//	for(p=a;p<a+10;p++)
-//		printf("%d\t",*p);
+//	*p2='\0';
+//	printf("a:\n");
+//	printf("%s\n",b);	
 //	return 0;
 //}
-//void sorts(int x[],int n)
+
+
+//用字符数组名作为函数参数
+//#include <stdio.h> 
+//int main(void)
 //{
-//	int i,j,t,k;
-//	for(i=0;i<n-1;i++)
+//	void copy_string(char from[],char to[]);
+//	char a[20]="i love china.",b[20]="i am a student.";
+//	
+//	printf("string a is:%s\n",a);	
+//	printf("string b is:%s\n",b);
+//	copy_string(a,b);
+//	printf("copy a to b is:%s\n",b);
+//	return 0;
+//}
+//void copy_string(char from[],char to[])
+//{
+//	int i;
+//	for(i=0;(from[i]) != '\0';i++)
+//		to[i]=from[i];
+//	to[i]='\0';
+//}
+
+////用字符型指针变量做实参
+//#include <stdio.h> 
+//int main()
+//{
+//	void copy_string(char from[],char to[]);
+//	char a[20]="i love china.",b[20]="i am a student.";
+//	char *p1,*p2;
+//	p1=a;p2=b;
+//	
+//	printf("string a is:%s\n",p1);
+//	printf("string b is:%s\n",p2);
+//	copy_string(p1,p2);
+//	printf("result:%s\n",p2);
+//	
+//	return 0;
+//}
+//void copy_string(char from[],char to[])
+//{
+//	int i;
+//	for(i=0;(from[i])!= '\0';i++)
 //	{
-//		k=i;
-//		for(j=i+1;j<n;j++)
+//		to[i]=from[i];
+//	}
+//	to[i]='\0';
+//}
+//
+////用字符指针变量做形参和实参
+//#include <stdio.h> 
+//int main(void)
+//{
+//	void copy_string(char *q1,char *q2);
+//	char a[20]="i love china.",b[20]="i am a student.",*p1,*p2;
+//	p1=a;p2=b;
+//	printf("string a is:%s\n",p1);
+//	printf("string b is:%s\n",p2);
+//	copy_string(p1,p2);
+//	printf("copy a to b is:\n%s\n",p2);
+//	return 0;
+//}
+//void copy_string(char *q1,char *q2)
+//{
+////	int i;
+////	for(i=0;*(q1+i) != '\0';i++)
+////		*(q2+i)=*(q1+i);
+////	*(q2+i)='\0';
+//	for(;*q1 != '\0';q1++,q2++)
+//		*q2=*q1;
+//	*q2='\0';
+//}
+
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	char *a="i love china!";
+//	a=a+7;
+//	printf("%s\n",a); 
+//	return 0;
+//}
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	int max(int x,int y);
+//	int a,b,c;
+//	printf("请输入两个数：\n");
+//	scanf("%d%d",&a,&b);
+//	c=max(a,b);
+//	printf("最大数是：%d\n",c);
+//	return 0;
+//}
+//int max(int x,int y)
+//{
+//	return (x>y?x:y);	
+//}
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	int max(int x,int y);
+//	int (*p)(int x,int y);
+//	int a,b,c;
+//	printf("请输入2个数：\n");
+//	scanf("%d%d",&a,&b);
+//	p=max;
+//	c=(*p)(a,b);
+//	printf("最大者是：%d\n",c);
+//	return 0;
+//}
+//int max(int x,int y)
+//{
+//	return (x>y?x:y);	
+//}
+
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	int max(int x,int y);
+//	int min(int x,int y);
+//	int MIN,MAX,a,b,n;
+//	printf("请输入两个数：\n");
+//	scanf("%d%d",&a,&b);
+//	printf("请输入您的选择<1或2>：\n");
+//	scanf("%d",&n);
+//	MAX=max(a,b);
+//	MIN=min(a,b);
+//	if(n==1 || n==2)
+//	{
+//		if(n==1)
+//			printf("最大者是：%d\n",MAX);
+//		if(n==2)
+//			printf("最小者是：%d\n",MIN);
+//	}
+//	else
+//		printf("输入有误！\n\n");
+//	
+//	return 0;
+//}
+//int max(int x,int y)
+//{
+//	return x>y?x:y;
+//}
+//int min(int x,int y)
+//{
+//	return x<y?x:y;
+//}
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	int max(int x,int y);
+//	int min(int x,int y);
+//	int (*p)(int x,int y);
+//	int a,b,c,n;
+//	printf("请输入两个数：\n");
+//	scanf("%d %d",&a,&b);
+//	printf("请输入您的选择<1或2>:\n");
+//	scanf("%d",&n);
+//	
+//	if(n==1 || n==2)
+//	{
+//		if(n==1)
 //		{
-//			if(x[k]<x[j])
-//			k=j;
-//			if(k != i)
-//			{
-//				t=x[i];
-//				x[i]=x[k];
-//				x[k]=t;
-//			}
+//			p=max;c=(*p)(a,b);
+//			printf("最大者是：%d\n",c);
+//		}
+//		if(n==2)
+//		{
+//			p=min;c=(*p)(a,b);
+//			printf("最小者是：%d\n",c);
 //		}
 //	}
+//	else
+//		printf("error!!\n");
+//	
+//	return 0;
 //}
-
-
-
-
-
-
-
+//int max(int x,int y)
+//{
+//	return x>y?x:y;
+//}
+//int min(int x,int y)
+//{
+//	return x<y?x:y;
+//}
 
 
 
