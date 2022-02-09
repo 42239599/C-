@@ -1,575 +1,359 @@
 //#include <stdio.h> 
-//int main(void)
+//int main()
 //{
-//	void sort(int a[],int n,int m);
-//	int i,n,m,a[100];
+//	void reversed(int *p,int n);
+//	int a[20],i,n;
 //	printf("请输入数字个数：\n");
 //	scanf("%d",&n);
-//	printf("请输入每个数字：\n");
-//	for(i=0;i<n;i++) 
+//	printf("请输入各个数字：\n");
+//	for(i=0;i<n;i++)
 //		scanf("%d",&a[i]);
-//	printf("请输入要后移的位数：\n");
-//		scanf("%d",&m);
-//	sort(a,n,m);
-//	printf("整理后的结果为：\n");
-//	for(i=n-m;i<2*n;i++)
-//		printf("%d\t",a[i]);
+//	reversed(a,n);
 //	return 0;
 //}
-//int sort(int a[],int n,int m)
+//void reversed(int *p,int n)
+//{
+//	int mid,i,t,j=n-1;
+//	mid=n/2;
+//	for(i=0;i<mid;i++,j--)
+//	{
+//		t=*(p+i);
+//		*(p+i)=*(p+j);
+//		*(p+j)=t;
+//	}
+//	printf("输出结果是：\n");
+//	for(i=0;i<n;i++)
+//	{
+//		printf("%d\t",*(p+i));
+//	}
+//}
+
+//
+//#include <stdio.h>
+//int main()
+//{
+//	void average(float (*p)[4]);
+//	void search(float (*p)[4]);
+//	void search_a(float (*p)[4]);
+//	
+//	float score[3][4];
+//	int i,j;
+//	for(i=0;i<3;i++)
+//	{
+//		printf("请输入第%d位学生的成绩：\n",i+1);
+//		for(j=0;j<4;j++)
+//		{
+//			scanf("%f",&score[i][j]);
+//		}
+//	}
+//	
+//	average(score);
+//	search(score);
+//	search_a(score);
+//	
+//	return 0;
+//}
+//void average(float (*p)[4])
+//{
+//	int i,j;
+//	float aver,sum=0;
+//	for(i=0;i<3;i++)
+//	{
+//		for(j=0;j<1;j++)
+//		{
+//			sum+=*(*(p+i)+j);
+//		}
+//	}
+//	aver=sum/3.0;
+//	printf("第一门课平均分为：%5.2f\n\n",aver);
+//}
+//
+//void search(float (*p)[4])
+//{
+//	int i,j,count=0;
+//	float aver,sum=0;
+//	for(i=0;i<3;i++)
+//	{
+//		aver=0;
+//		sum=0;
+//		count =0 ;
+//		for(j=0;j<4;j++)
+//		{
+//			if(*(*(p+i)+j)<60)
+//			count ++;
+//			if(count>1)
+//			{
+//				for(j=0;j<4;j++)
+//				{
+//					sum+=*(*(p+i)+j);
+//				}
+//				aver=sum/4.0;
+//				printf("第%d位同学的成绩至少有两门不及格\n总平均分是%5.2f\n各科成绩是：",i+1,aver);
+//				for(j=0;j<4;j++)
+//					printf("%5.2f\t",*(*(p+i)+j));
+//			}
+//		}
+//		printf("\n");
+//	}
+//	
+//}
+//
+//void search_a(float (*p)[4])
+//{
+//	int i,j,count;
+//	float aver,sum=0;
+//	for(i=0;i<3;i++)
+//	{
+//		sum=0;
+//		aver=0;
+//		count =0;
+//		for(j=0;j<4;j++)
+//		{
+//			sum+=*(*(p+i)+j);
+//			if(*(*(p+i)+j)>85)
+//				count ++;
+//		}
+//		aver=sum/4.0;
+//		if(count == 4)
+//			printf("第%d位同学的全部成绩全在85以上！\n",i+1);
+//		if(aver>90)
+//			printf("第%d位同学的平均分在90以上!\n",i+1);	
+//	}
+//}
+//
+
+//#include <stdio.h>
+//int main(void)
+//{
+//	struct Student
+//	{
+//		long int num;
+//		char name[20];
+//		char sex;
+//		char addr[20];
+//	}a={1001,"li ming",'M',"123 beijing road"};
+//	printf("NO.%ld\nname:%s\nsex:%c\naddr:%s\n",a.num,a.name,a.sex,a.addr);
+//	return 0;
+//}
+
+
+//#include <stdio.h>
+//int main()
+//{
+//	struct stu
+//	{
+//		int num;
+//		char name[10];
+//		float score;
+//	}student1,student2;
+//	printf("请输入学生1的学号名字和成绩：\n");
+//	scanf("%d%s%f",&student1.num,student1.name,&student1.score);
+//	printf("请输入学生2的学号名字和成绩：\n");
+//	scanf("%d%s%f",&student2.num,student2.name,&student2.score);
+//	
+//	if(student1.score > student2.score)
+//		printf("num:%d\nname:%s\nscore:%5.2f\n",student1.num,student1.name,student1.score);
+//	else if(student1.score < student2.score)
+//		printf("num:%d\nname:%s\nscore:%5.2f\n",student2.num,student2.name,student2.score);
+//	else
+//	{
+//		printf("num:%d\nname:%s\nscore:%5.2f\n",student1.num,student1.name,student1.score);
+//		printf("num:%d\nname:%s\nscore:%5.2f\n",student2.num,student2.name,student2.score);			
+//	}
+//
+//	return 0;
+//}
+
+//#include <string.h>
+//#include <stdio.h>
+//struct person
+//{
+//	char name[20];
+//	int count;
+//}leader[3]={"li",0,"sun",0,"chen",0};
+//int main()
+//{
+//	int i,j;
+//	char name_c[20];
+//	printf("请输入 名字：\n");
+//	for(i=1;i<=10;i++) 
+//	{
+//		scanf("%s",name_c);
+//		for(j=0;j<3;j++)
+//		{
+//			if(strcmp(leader[j].name ,name_c) == 0)
+//			leader[j].count++;
+//		 } 
+//	}
+//	printf("结果如下：\n");
+//	for(i=0;i<3;i++)
+//	{
+//		printf("%5s:%d\n",leader[i].name,leader[i].count );
+//	}	
+//	return 0;
+//}
+
+//#include <stdio.h>
+//struct student
+//{
+//	int num;
+//	char name[20];
+//	float score;
+//};
+//
+//int main(void)
+//{
+//	struct student stu[5]={{502,"lihua",98},{506,"liming",94},{555,"lisi",98.5},{206,"xiaofang",94},{306,"zhangsan",96}};	
+//	struct student t;
+//	int n=5;
+//	int i,j;
+//	for(i=0;i<n-1;i++)
+//	{
+//		for(j=i+1;j<n;j++)
+//		{
+//			if(stu[i].score > stu[j].score )
+//			{
+//				t=stu[i];
+//				stu[i]=stu[j];
+//				stu[j]=t;
+//			}
+//		}
+//	}
+//	
+//	printf("排序结果如下：\n");
+//	
+//	for(i=0;i<n;i++)
+//	{
+//		printf("\nnum:%d\nname:%s\nscore:%5.2f\n",stu[i].num ,stu[i].name ,stu[i].score );
+//	}
+//	return 0;
+//}
+
+
+//#include <stdio.h>
+//#include <string.h>
+//struct person
+//{
+//	char namr[20];
+//	int count;
+//}leader[3]={"li",0,"sun",0,"qi",0};
+//int main()
+//{
+//	int i,j;
+//	char name_c[20];
+//	printf("请输入名字：\n");
+//	for(i=0;i<10;i++)
+//	{
+//		scanf("%s",name_c);
+//		for(j=0;j<3;j++)
+//		{
+//			if(strcmp(leader[j].namr , name_c) == 0)
+//				leader[j].count ++;
+//		}
+//	}
+//	printf("result:\n\n");
+//	for(i=0;i<3;i++)
+//	{
+//		printf("%5s:%d\n",leader[i].namr ,leader[i].count );
+//	}
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#include <string.h>
+//int main()
+//{
+//	struct student
+//	{
+//		long num;
+//		char name[20];
+//		char sex;
+//		float score;
+//	};
+//	
+//	struct student stu_1;
+//	struct student *p;
+//	p=&stu_1;
+//	stu_1.num=10101;
+//	strcpy(stu_1.name,"lilei");
+//	stu_1.sex='M';
+//	stu_1.score=89.5;
+//	printf("\nNO.%d\nname:%s\nsex:%c\nscore:%5.2f\n",stu_1.num,(*p).name,p->sex,stu_1.score);
+//	
+//	return 0;
+//}
+
+
+//#include <stdio.h>
+//struct student
+//{
+//	int num;
+//	char name[20];
+//	char sex;
+//	int age;
+//}stu[3]={{106,"liming",'M',20},{666,"lihua",'M',23},{405,"lisi",'F',21}};
+//
+//int main()
+//{
+//	struct student *p;
+//	printf("num:\tname\tsex\tage\n");
+//	for(p=stu;p<stu+3;p++)
+//	{
+//		printf("%d\t%s\t%c\t%d\n",p->num ,p->name ,p->sex ,p->age );
+//	}
+//	
+//	return 0;
+//}
+
+//#include <stdio.h>
+//#define n 3
+//struct student
+//{
+//	int num;
+//	char name[10];
+//	float score[3];
+//	float aver;
+//};
+//
+//int main(void)
+//{
+//	void input(struct student stu[]);
+//	struct student max(struct student stu[]);
+//	void print(struct student stud);
+//	
+//	struct student stu[n], *p=stu;
+//	input(p);
+//	print(max(p));
+//	return 0;
+//}
+//void input(struct student stu[])
 //{
 //	int i;
-//	for(i=0;i<n-m;i++,n++)
-//	{
-//		a[n]=a[i];
-//	}
-//}
-
-//#include<stdio.h>
-//int main()
-//{
-//	void move(int[20], int, int);
-//	int number[20], n, m, i;
-//	printf("请输入数字个数：\n");
-//	scanf("%d",&n);
-//	printf("请输入每个数字：\n");
-//	for (i = 0;i < n;i++)
-//		scanf("%d", &number[i]);
-//	printf("请输入要移动的位数：\n");
-//	scanf("%d", &m);
-//	move(number, n, m);
-//	printf("结果是：\n"); 
-//	for (i = 0;i < n;i++)
-//		printf("%d  ", number[i]);
-//}
-// 
-//void move(int array[20], int n, int m)
-//{
-//	int *p, arrayend;
-//	arrayend = *(array + n - 1);
-//	for (p = array + n - 1;p > array;p--)
-//		*p = *(p - 1);
-//	*array = arrayend;
-//	m--;
-//	if (m > 0)move(array, n, m);
-//}
-
-
-//#include <stdio.h>
-//int main()
-//{
-//	void sort(int a[],int n,int m);
-//	int a[100],i,n,m;
-//	printf("请输入数字个数：\n");
-//		scanf("%d",&n);
-//	printf("请输入每个数字：\n");
+//	printf("请输入各个学生的学号、姓名、3门课成绩：\n");
 //	for(i=0;i<n;i++)
-//		scanf("%d",&a[i]);
-//	printf("请输入要位移的位数：\n");
-//	scanf("%d",&m);
-//	sort(a,n,m);
-//	printf("结果是：\n");
-//	for(i=0;i<n;i++)
-//		printf("%d\t",a[i]);
-//	return 0;
-//}
-//void sort(int a[],int n,int m)
-//{
-//	int aend,*p;
-//	aend=*(a+n-1);
-//	for(p=a+n-1;p>a;p--)
 //	{
-//		*p=*(p-1);
+//		scanf("%d%s%f%f%f",&stu[i].num ,stu[i].name,&stu[i].score[0] ,&stu[i].score[1],&stu[i].score [2] );
+//		stu[i].aver =(stu[i].score [0]+stu[i].score [1]+stu[i].score [2])/3.0;
 //	}
-//	*a=aend;
-//	m--;
-//	if(m>0)	sort(a,n,m);
+//	
 //}
 //
-//#include
-
-//#include <stdio.h>
-//int main(void)
+//struct student max(struct student stu[])
 //{
-//	int n,a[100],*p,i,m=0,k=0;
-//	printf("请输入人数：\n");
-//		scanf("%d",&n);
-//	for(i=0;i<n;i++)
-//		a[i]=i+1;
-//		
-//	p=a;
-//	i=0;
-//	while(m<n-1)
-//	{
-//		if(*(p+i) != 0)
-//			k++;
-//		if(k==3)
-//		{
-//			*(p+i)=0;
-//			m++;
-//			k=0;
-//		}
-//		i++;
-//		if(i==n)
-//			i=0;
-//	}
-//	while(*p==0)
-//	 p++;
-//	printf("%d\t",*p);
-//	
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main()
-//{
-//	void sort(int a[],int n,int m);
-//	int i,n,m,a[20];
-//	printf("请输入个数：\n");
-//		scanf("%d",&n);
-//	printf("输入各数：\n");
+//	int i,m=0;
 //	for(i=0;i<n;i++)
 //	{
-//		scanf("%d",&a[i]);
+//		if(stu[i].aver >stu[m].aver )
+//		m=i;
 //	}
-//	printf("输入要位移的数字：\n");
-//	scanf("%d",&m);
-//	sort(a,n,m);
-//	printf("输出：\n");
-//	for(i=0;i<n;i++)
-//		printf("%d\t",a[i]);
-//	return 0 ;
+//	return stu[m];
 //}
-//void sort(int a[],int n,int m)
+//void print(struct student stud)
 //{
-//	int *p,aend;
-//	aend=*(a+n-1);
-//	for(p=a+n-1;p>a;p--)
-//		*p=*(p-1);
-//	*a=aend;
-//	m--;
-//	if(m>0)	sort(a,n,m);	
+//	printf("成绩最高的同学是：\n");
+//	printf("学号：%d\n姓名：%s\n三门成绩：%5.2f\t%5.2f\t%5.2f\n平均成绩：%5.2f\n",
+//	stud.num ,stud.name ,stud.score [0],stud.score [1],stud.score [2],stud.aver );
 //}
-
-//#include <stdio.h>
-//int main(void)
-//{
-//	int *p,a[100],i,n,m=0,k=0;
-//	printf("请输入人数：\n");
-//		scanf("%d",&n);
-//	for(i=0;i<n;i++)
-//		a[i]=i+1;
-//	
-//	p=a;
-//	i=0;
-//	
-//	while(m<n-1)
-//	{
-//		if(*(p+i)!=0)
-//			k++;
-//		if(k==3)
-//		{
-//			*(p+i)=0;
-//			k=0;
-//			m++;
-//		}
-//		i++;
-//		if(i==n)
-//			i=0;
-//	}
-//	while(*p==0)
-//		p++;
-//	printf("%d\n",*p);
-//	
-//	return 0;
-//}
-
-//#include <stdio.h>
-//int main(void)
-//{
-//	int len(char *p);
-//	char a[100];
-//	printf("请输入单词：\n");
-//	gets(a);
-//	
-//	printf("长度是：%d",len(a));
-//	return 0;
-//}
-//int len(char *p)
-//{
-//	int i,count=0;
-//	for(i=0;*(p+i) != '\0';i++)
-//	{
-//		count++;
-//	}
-//	return count;
-////}
-//
-//#include <stdio.h>
-//int main() 
-//{
-//	void opa(char *p,int m,char *q);
-//	char a[20],b[20];
-//	printf("请输入原句子：\n");
-//		gets(a);
-//	int m;
-//	printf("请输入开始复制的位数：\n");
-//	scanf("%d",&m);
-//	opa(a,m,b);
-//	printf("\n结果是：%s\n",b);
-//	return 0;
-//}
-//void opa(char *p,int m,char *q)
-//{
-//	int i,j=0;
-//	for(i=m-1;*(p+i) != '\0';i++,j++)
-//		*(q+j)=*(p+i);
-//	*(q+j)='\0';
-//	
-//}
-
-//#include <stdio.h>
-//int main(void)
-//{
-//	void opa(int (*p)[3]);
-//	int a[3][3],i,j;
-//	printf("请输入12个数：\n");
-//	for(i=0;i<3;i++)
-//	{
-//		for(j=0;j<3;j++)
-//			scanf("%d",&a[i][j]);
-//	}
-//		
-//	printf("原数组如下排列：\n");
-//	for(i=0;i<3;i++)
-//	{
-//		for(j=0;j<3;j++)
-//		{
-//			printf("%5d",a[i][j]);
-//		}
-//		printf("\n\n");
-//	}	
-//	
-//	opa(a);
-//		
-//	printf("调整后的结果是：\n");
-//	for(i=0;i<3;i++)
-//	{
-//		for(j=0;j<3;j++)
-//			printf("%5d",a[i][j]);
-//		printf("\n\n");
-//	}
-//	
-//	return 0;
-//}
-//void opa(int (*p)[3])
-//{
-//	int i,j,t;
-//	for(i=0;i<3;i++)
-//	{
-//		for(j=0;j<=i;j++)
-//		{
-//			if(i!=j)
-//			{
-//				t=*(*(p+i)+j);
-//				*(*(p+i)+j)=*(*(p+j)+i);
-//				*(*(p+j)+i)=t;
-//			}
-//		}
-//	}
-//}
-
-
-//#include <stdio.h>
-//int main()
-//{
-//	void trans(int (*p)[5]);
-//	int a[5][5],i,j;
-//	int (*q)[5];
-//	q=a;
-//	printf("请输入一个5*5的整型矩阵：\n");
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			scanf("%d",&a[i][j]);
-//		}
-//	}
-//	printf("原矩阵是：\n");
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			printf("%-5d",a[i][j]);
-//		}
-//		printf("\n");
-//	}
-//	trans(q);
-//	printf("整理后是：\n");
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			printf("%-5d",*(*(q+i)+j));
-//		}
-//		printf("\n");
-//	}
-//	return 0;
-//}
-//
-//void trans(int (*p)[5])
-//{
-//	int max,min[4],i,j,ti,tj;
-//	void swap(int *,int *);	//定义交换函数 
-////找出最大数 
-//	max=*(*(p+2)+2);
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(*(*(p+i)+j)>max)
-//			{
-//				max=*(*(p+i)+j);
-//				ti=i;tj=j;
-//			}
-//		}
-//	}
-//	if(!(ti==2 && tj==2))
-//	swap(*(p+2)+2,*(p+ti)+tj);
-////找出第一个最小数 
-//	min[0]=**p;
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(*(*(p+i)+j)<min[0])
-//			{
-//					min[0]=*(*(p+i)+j);
-//					ti=i;tj=j;
-//			}
-//		}
-//	}
-//	if(**p != min[0])
-//	swap(*p,*(p+ti)+tj);
-////找出第二个最小数	
-//	min[1]=*(*(p)+4);
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(!(i==0 && j==0))
-//			{
-//				if(*(*(p+i)+j)<min[1])
-//				{
-//					min[1]=*(*(p+i)+j);
-//					ti=i;tj=j;
-//				}
-//			}
-//		}
-//	}
-//	if(*(*(p)+4) != min[1])
-//	swap(*(p)+4,*(p+ti)+tj);
-////找出第三个最小数 
-//	min[2]=*(*(p+4));
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(!(i==0 && j==0) && !(i==0 && j==4))
-//			{
-//				if(*(*(p+i)+j)<min[2])
-//				{
-//					min[2]=*(*(p+i)+j);
-//					ti=i;tj=j;
-//				}
-//			}
-//		}
-//	}
-//	if(*(*(p+4)) != min[2])
-//	swap(*(p+4),*(p+ti)+tj);
-////找出第四个最小数	
-//	min[3]=*(*(p+4)+4);
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(!(i==0 && j==0)&& !(i==0 && j==4) && !(i==4 && j==0))
-//			{
-//				if(*(*(p+i)+j)<min[3])
-//				{
-//					min[3]=*(*(p+i)+j);
-//					ti=i;tj=j;
-//				}
-//			}
-//		}
-//	}
-//	if(*(*(p+4)+4) != min[3])
-//	swap(*(p+4)+4,*(p+ti)+tj);
-//}
-////交换函数 
-//void swap(int *a,int *b)
-//{
-//	int t;
-//	t=*a;
-//	*a=*b;
-//	*b=t;
-//}
-
-
-//#include <stdio.h>
-//int main()
-//{
-//	void opa(int (*p)[5]);
-//	int a[5][5],i,j;
-//	printf("请输入25个数：\n");
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			scanf("%d",&a[i][j]);
-//		}
-//	}
-//	printf("原数组排序如下：\n");
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			printf("%5d",a[i][j]);
-//		}
-//		printf("\n");
-//	}	
-//	opa(a);
-//	
-//	printf("\n结果如下：\n");
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			printf("%5d",a[i][j]);
-//		}
-//		printf("\n");
-//	}
-//	
-//	return 0;
-//}
-////52 14 36 23 78 98 89 69 58 47 10 20 30 40 50 60 70 80 90 99 77 55 66 11 22
-//void opa(int (*p)[5]) 
-//{
-//	void swap(int *a,int *b);
-//	int i,j,ti,tj;
-//	int max,min[4];
-//	
-//	max=*(*(p+2)+2);
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(*(*(p+i)+j)>max)
-//			{
-//				max=*(*(p+i)+j);
-//				ti=i;tj=j;
-//			}
-//		}
-//	}
-//	if(!(ti==2 && tj==2))
-//		swap((*(p+ti)+tj),(*(p+2)+2));
-//////////
-//	min[0]=**p;
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(*(*(p+i)+j)<min[0])
-//			{
-//				min[0]=*(*(p+i)+j);
-//				ti=i;tj=j;
-//			}
-//		}
-//	}
-//	if(**p != min[0])
-//		swap((*(p+ti)+tj),*p);
-////////// 
-//	min[1]=*(*(p)+4);
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(!(i==0 && j==0))
-//			if(*(*(p+i)+j)<min[1])
-//			{
-//				min[1]=*(*(p+i)+j);
-//				ti=i;tj=j;
-//			}
-//		}
-//	}
-//	if( *(*(p)+4) != min[1]);
-//		swap(*(p+ti)+tj,*(p)+4);
-//	
-//////// 
-//	min[2]=*(*(p+4));
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(!(i==0 && j==0) && !(i==0 && j==4))
-//			{
-//				if(*(*(p+i)+j)<min[2])
-//				{
-//					min[2]=*(*(p+i)+j);
-//					ti=i;tj=j;
-//				}
-//			}
-//		}
-//	}
-//	if(min[2] != *(*(p+4)))
-//		swap(*(p+ti)+tj,*(p+4));	
-////////	
-//	min[3]=*(*(p+4)+4);
-//	for(i=0;i<5;i++)
-//	{
-//		for(j=0;j<5;j++)
-//		{
-//			if(!(i==0 && j==0) && !(i==0 && j==4) && !(i==4 && j==0) )
-//			{
-//				if(min[3]>*(*(p+i)+j))
-//				{
-//					min[3]=*(*(p+i)+j);
-//					ti=i;tj=j;
-//				}
-//			}
-//		}
-//	}
-//	if(*(*(p+4)+4)!=min[3]  )
-//		swap(*(p+ti)+tj,*(p+4)+4);
-//				
-//}
-//void swap(int *a,int *b)
-//{
-//	int t;
-//	t=*a;
-//	*a=*b;
-//	*b=t;
-//}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
